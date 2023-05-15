@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style text="text/css">
+        html,body{
+        width:100%;
+        height:100%;
+        }
+    </style>
+</head>
+<body onclick="play()">
+<audio id="audio" controls="controls" muted="muted" style="width:0;height:0;" autoplay="autoplay"></audio>
+</body>
+<script type="text/javascript">
+let i=0;
+function play(){
+    let audio=document.getElementById('audio');
+    console.log(111);
+    audio.play();
+    setInterval(()=>{
+    console.log(222);
+    audio.src='audio/sf.mp3';
+    audio.muted='';
+    audio.play();
+    },5000);
+}
+</script>
+</html>

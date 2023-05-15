@@ -1,0 +1,74 @@
+{
+    "key": "clivia.wps",
+    "uri": "/wps/",
+    "props": [
+        {
+            "name": "key"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "appId"
+        },
+        {
+            "name": "secret"
+        },
+        {
+            "name": "watermark"
+        },
+        {
+            "name": "nick"
+        },
+        {
+            "name": "avatar",
+            "type": "image",
+            "upload": "image"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "key"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "appId"
+            }
+        ],
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

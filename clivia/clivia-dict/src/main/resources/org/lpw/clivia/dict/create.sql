@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS t_dict;
+CREATE TABLE t_dict
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_key VARCHAR(255) NOT NULL COMMENT '引用',
+  c_value VARCHAR(255) NOT NULL COMMENT '值',
+  c_name VARCHAR(255) DEFAULT NULL COMMENT '名称',
+
+  PRIMARY KEY pk(c_id) USING HASH,
+  UNIQUE KEY uk_key_value(c_key,c_value) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

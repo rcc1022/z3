@@ -1,0 +1,36 @@
+.sign-in-layout {
+    min-height: 100vh;
+}
+
+.sign-in-header {
+    padding-top: 32px;
+    text-align: center;
+    font-size: 32px;
+    line-height: 200%;
+    color: rgba(0, 0, 0, 0.45);
+}
+
+.sign-in-form {
+    width: 368px;
+    margin: 0 auto;
+}
+
+.sign-in-form .sign-in-up-button {
+    width: 100%;
+}
+
+.sign-in-form .sign-in-up-link {
+    float: right;
+    margin-top: -5px;
+    padding: 0;
+}
+
+.sign-in-form .sign-in-third {
+    padding-left: 8px;
+}
+
+.sign-in-footer {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 14px;
+}

@@ -1,0 +1,19 @@
+{
+    "key": "clivia.user.illegal",
+    "uri": "/user/illegal/",
+    "props": [
+        {
+            "name": "user",
+            "type": "user"
+        },
+        {
+            "name": "ip"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid"
+    }
+}

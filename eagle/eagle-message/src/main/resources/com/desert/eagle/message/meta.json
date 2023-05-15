@@ -1,0 +1,29 @@
+{
+    "key": "eagle.message",
+    "uri": "/message/",
+    "props": [
+        {
+            "name": "game"
+        },
+        {
+            "name": "player"
+        },
+        {
+            "name": "type"
+        },
+        {
+            "name": "content"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "game"
+            }
+        ]
+    }
+}

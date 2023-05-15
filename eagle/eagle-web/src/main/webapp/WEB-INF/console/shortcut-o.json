@@ -1,0 +1,10 @@
+[
+  {
+    "interval": 5,
+    "service": "/olcs/member/unread",
+    "icon": "../icon/customer.png",
+    "badge": "count",
+    "ringtone": "../audio/unread.wav",
+    "load": "/olcs/query"
+  }
+]

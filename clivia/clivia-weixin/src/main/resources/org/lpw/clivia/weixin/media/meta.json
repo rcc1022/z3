@@ -1,0 +1,68 @@
+{
+    "key": "clivia.weixin.media",
+    "uri": "/weixin/media/",
+    "props": [
+        {
+            "name": "key"
+        },
+        {
+            "name": "appId"
+        },
+        {
+            "name": "type"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "mediaId"
+        },
+        {
+            "name": "url"
+        },
+        {
+            "name": "uri"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete",
+                "service": ".delete",
+                "success": ".query"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": ".save",
+                "success": ".query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": ".save",
+                "success": ".query"
+            }
+        ]
+    }
+}

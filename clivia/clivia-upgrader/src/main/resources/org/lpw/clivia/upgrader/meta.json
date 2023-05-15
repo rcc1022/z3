@@ -1,0 +1,73 @@
+{
+    "key": "clivia.upgrader",
+    "uri": "/upgrader/",
+    "props": [
+        {
+            "name": "version"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "forced",
+            "labels": "forceds"
+        },
+        {
+            "name": "explain",
+            "type": "text-area"
+        },
+        {
+            "name": "android"
+        },
+        {
+            "name": "ios"
+        },
+        {
+            "name": "windows"
+        },
+        {
+            "name": "macos"
+        },
+        {
+            "name": "linux"
+        },
+        {
+            "name": "file",
+            "type": "file"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

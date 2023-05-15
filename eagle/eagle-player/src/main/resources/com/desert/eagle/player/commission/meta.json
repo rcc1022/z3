@@ -1,0 +1,42 @@
+{
+  "key": "eagle.player.commission",
+  "uri": "/player/commission/",
+  "props": [
+    {
+      "name": "player",
+      "type": "user"
+    },
+    {
+      "name": "uid"
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "status",
+      "labels": "statuses"
+    },
+    {
+      "name": "submit"
+    },
+    {
+      "name": "audit"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "ops": [
+      {
+        "service": "pass",
+        "when": "model.status==0",
+        "reload": true
+      },
+      {
+        "service": "reject",
+        "when": "model.status==0",
+        "reload": true
+      }
+    ]
+  }
+}

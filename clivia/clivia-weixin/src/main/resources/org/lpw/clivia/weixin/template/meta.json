@@ -1,0 +1,74 @@
+{
+    "key": "clivia.weixin.template",
+    "uri": "/weixin/template/",
+    "props": [
+        {
+            "name": "key"
+        },
+        {
+            "name": "weixinKey"
+        },
+        {
+            "name": "type"
+        },
+        {
+            "name": "templateId"
+        },
+        {
+            "name": "url"
+        },
+        {
+            "name": "page"
+        },
+        {
+            "name": "miniAppId"
+        },
+        {
+            "name": "color"
+        },
+        {
+            "name": "keyword"
+        },
+        {
+            "name": "state"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete",
+                "service": ".delete",
+                "success": ".query"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": ".save",
+                "success": ".query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": ".save",
+                "success": ".query"
+            }
+        ]
+    }
+}

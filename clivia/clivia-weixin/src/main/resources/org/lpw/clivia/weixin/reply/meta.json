@@ -1,0 +1,66 @@
+{
+    "key": "clivia.weixin.reply",
+    "uri": "/weixin/reply/",
+    "props": [
+        {
+            "name": "key"
+        },
+        {
+            "name": "sort"
+        },
+        {
+            "name": "receiveType"
+        },
+        {
+            "name": "receiveMessage"
+        },
+        {
+            "name": "sendType"
+        },
+        {
+            "name": "sendMessage"
+        },
+        {
+            "name": "state",
+            "labels": ".states"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete",
+                "service": ".delete",
+                "success": ".query"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": ".save",
+                "success": ".query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": ".save",
+                "success": ".query"
+            }
+        ]
+    }
+}

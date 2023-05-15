@@ -1,0 +1,36 @@
+{
+    "key": "clivia.group",
+    "uri": "/group/",
+    "props": [
+        {
+            "name": "type"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "avatar"
+        },
+        {
+            "name": "notice"
+        },
+        {
+            "name": "join"
+        },
+        {
+            "name": "ban"
+        },
+        {
+            "name": "count"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid"
+    },
+    "user": {
+        "type": "grid"
+    }
+}

@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS t_user_illegal;
+CREATE TABLE t_user_illegal
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_user CHAR(36) DEFAULT NULL COMMENT '用户',
+  c_ip VARCHAR(255) DEFAULT NULL COMMENT 'IP',
+  c_time DATETIME NOT NULL COMMENT '时间',
+
+  PRIMARY KEY pk(c_id) USING HASH,
+  KEY k_time(c_time) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,0 +1,28 @@
+{
+  "key": "eagle.player.unwater",
+  "uri": "/player/unwater/",
+  "props": [
+    {
+      "name": "player",
+      "type": "user"
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "memo"
+    },
+    {
+      "name": "time"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "time"
+      }
+    ]
+  }
+}

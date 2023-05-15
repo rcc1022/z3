@@ -1,0 +1,67 @@
+.api-logo {
+    width: 100%;
+    height: 64px;
+    text-align: center;
+}
+
+.api-logo img {
+    max-width: 88%;
+    max-height: 88%;
+    vertical-align: middle;
+}
+
+.api-logo div {
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+
+.api-logo div {
+    line-height: 28px;
+    padding-top: 3px;
+    border-bottom: 1px solid #333;
+}
+
+.api-menu {
+    margin-bottom: 33px;
+}
+
+.api-copyright {
+    position: fixed;
+    bottom: 0;
+    width: 200px;
+    line-height: 32px;
+    text-align: center;
+    color: #666;
+    border-top: 1px dashed #333;
+    background-color: #001529;
+}
+
+.api-header {
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.api-body {
+    min-height: calc(100% - 16px);
+    margin: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.api-title,
+.api-response-title {
+    font-weight: bold;
+}
+
+.api-response-title {
+    padding: 16px;
+}
+
+pre {
+    margin: 0;
+    padding: 8px 8px 0 8px;
+    background-color: #f6f8fa;
+}

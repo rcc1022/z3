@@ -1,0 +1,16 @@
+{
+    "services": [
+        {
+            "uri": "one",
+            "psid": true,
+            "parameters": [
+                {
+                    "name": "type",
+                    "type": "string",
+                    "require": true
+                }
+            ],
+            "response": "model"
+        }
+    ]
+}

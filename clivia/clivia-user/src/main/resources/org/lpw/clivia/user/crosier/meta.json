@@ -1,0 +1,13 @@
+{
+    "key": "clivia.user.crosier",
+    "uri": "/user/crosier/",
+    "query": {
+        "type": "crosier",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

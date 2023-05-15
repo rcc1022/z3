@@ -1,0 +1,76 @@
+{
+    "key": "clivia.account",
+    "uri": "/account/",
+    "props": [
+        {
+            "name": "user.auth.uid",
+            "label": "clivia.account.uid"
+        },
+        {
+            "name": "owner"
+        },
+        {
+            "name": "type",
+            "format": "number"
+        },
+        {
+            "name": "balance",
+            "format": "money"
+        },
+        {
+            "name": "deposit",
+            "format": "money"
+        },
+        {
+            "name": "withdraw",
+            "format": "money"
+        },
+        {
+            "name": "reward",
+            "format": "money"
+        },
+        {
+            "name": "profit",
+            "format": "money"
+        },
+        {
+            "name": "consume",
+            "format": "money"
+        },
+        {
+            "name": "remitIn",
+            "format": "money"
+        },
+        {
+            "name": "remitOut",
+            "format": "money"
+        },
+        {
+            "name": "refund",
+            "format": "money"
+        },
+        {
+            "name": "pending",
+            "format": "money"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "uid"
+            },
+            {
+                "name": "owner"
+            },
+            {
+                "name": "type"
+            },
+            {
+                "label": "balance",
+                "min": "minBalance",
+                "max": "maxBalance"
+            }
+        ]
+    }
+}

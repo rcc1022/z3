@@ -1,0 +1,107 @@
+{
+    "key": "eagle.player.ledger",
+    "uri": "/player/ledger/",
+    "props": [
+        {
+            "name": "uid"
+        },
+        {
+            "name": "player",
+            "type": "user"
+        },
+        {
+            "name": "balance0",
+            "type": "money"
+        },
+        {
+            "name": "amount",
+            "type": "money"
+        },
+        {
+            "name": "balance",
+            "type": "money"
+        },
+        {
+            "name": "memo"
+        },
+        {
+            "name": "type",
+            "values": "types"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "time",
+                "type": "date-range"
+            },
+            {
+                "name": "nick"
+            },
+            {
+                "name": "type"
+            },
+            {
+                "name": "uid"
+            }
+        ]
+    },
+    "player": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "time0",
+                "label": "time",
+                "type": "date-range"
+            },
+            {
+                "name": "type"
+            }
+        ]
+    },
+    "player-id": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "time0",
+                "label": "time",
+                "type": "date-range"
+            },
+            {
+                "name": "type0"
+            }
+        ]
+    },
+    "water": {
+        "type": "grid",
+        "props": [
+            {
+                "name": "player",
+                "type": "user"
+            },
+            {
+                "name": "amount",
+                "label": "water"
+            },
+            {
+                "name": "memo"
+            },
+            {
+                "name": "time"
+            }
+        ],
+        "search": [
+            {
+                "name": "time",
+                "type": "date-range"
+            }
+        ]
+    },
+    "user": {
+        "type": "grid"
+    }
+}

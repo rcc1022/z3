@@ -1,0 +1,158 @@
+{
+    "key": "clivia.weixin",
+    "uri": "/weixin/",
+    "props": [
+        {
+            "name": "key"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "appId"
+        },
+        {
+            "name": "secret"
+        },
+        {
+            "name": "token"
+        },
+        {
+            "name": "mchId"
+        },
+        {
+            "name": "mchPartnerId"
+        },
+        {
+            "name": "mchKey"
+        },
+        {
+            "name": "mchSerialNo"
+        },
+        {
+            "name": "mchPrivateKey",
+            "type": "text-area"
+        },
+        {
+            "name": "mchKeyV3"
+        },
+        {
+            "name": "accessToken",
+            "type": "read-only"
+        },
+        {
+            "name": "jsapiTicket",
+            "type": "read-only"
+        },
+        {
+            "name": "time",
+            "type": "read-only"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "props": [
+            {
+                "name": "key"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "appId"
+            },
+            {
+                "name": "mchId"
+            },
+            {
+                "name": "mchPartnerId"
+            },
+            {
+                "name": "mchSerialNo"
+            },
+            {
+                "name": "time",
+                "type": "read-only"
+            }
+        ],
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "single": {
+        "type": "form",
+        "props": [
+            {
+                "name": "appId"
+            },
+            {
+                "name": "secret"
+            },
+            {
+                "name": "token"
+            },
+            {
+                "name": "mchId"
+            },
+            {
+                "name": "mchPartnerId"
+            },
+            {
+                "name": "mchKey"
+            },
+            {
+                "name": "mchSerialNo"
+            },
+            {
+                "name": "mchPrivateKey"
+            },
+            {
+                "name": "mchKeyV3"
+            },
+            {
+                "name": "accessToken"
+            },
+            {
+                "name": "jsapiTicket"
+            },
+            {
+                "name": "time"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "save",
+                "service": "single-save",
+                "reload": true
+            }
+        ]
+    }
+}

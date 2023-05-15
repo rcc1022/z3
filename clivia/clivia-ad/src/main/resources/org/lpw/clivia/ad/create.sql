@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS t_ad;
+CREATE TABLE t_ad
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_type VARCHAR(255) NOT NULL COMMENT '类型',
+  c_sort INT DEFAULT 0 COMMENT '顺序',
+  c_name VARCHAR(255) DEFAULT NULL COMMENT '名称',
+  c_image VARCHAR(255) DEFAULT NULL COMMENT '图片',
+  c_operation VARCHAR(255) DEFAULT NULL COMMENT '操作',
+  c_target TEXT DEFAULT NULL COMMENT '目标地址',
+  c_state INT DEFAULT 0 COMMENT '状态：0-下线；1-上线',
+
+  PRIMARY KEY pk(c_id) USING HASH,
+  KEY k_type(c_type) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

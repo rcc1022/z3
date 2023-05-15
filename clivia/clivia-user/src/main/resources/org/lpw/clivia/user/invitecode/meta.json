@@ -1,0 +1,44 @@
+{
+    "key": "clivia.user.invitecode",
+    "uri": "/user/invitecode/",
+    "props": [
+        {
+            "name": "user",
+            "type": "user"
+        },
+        {
+            "name": "batch"
+        },
+        {
+            "name": "code"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "batch"
+            },
+            {
+                "name": "length"
+            },
+            {
+                "name": "count"
+            }
+        ],
+        "toolbar": [
+            {
+                "service": "generate",
+                "search": true
+            }
+        ],
+        "ops": [
+            {
+                "type": "delete"
+            }
+        ]
+    }
+}

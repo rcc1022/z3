@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS t_editor;
+CREATE TABLE t_editor
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_key VARCHAR(255) NOT NULL COMMENT '引用KEY',
+  c_order INT DEFAULT 0 COMMENT '顺序',
+  c_content TEXT DEFAULT NULL COMMENT '内容',
+  c_time BIGINT DEFAULT 0 COMMENT '时间',
+
+  PRIMARY KEY pk(c_id) USING HASH,
+  KEY k_key(c_key) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,0 +1,18 @@
+{
+    "key": "clivia.user.password",
+    "uri": "/user/password/",
+    "props": [
+        {
+            "name": "user"
+        },
+        {
+            "name": "type"
+        },
+        {
+            "name": "hash"
+        },
+        {
+            "name": "time"
+        }
+    ]
+}

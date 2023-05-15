@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style text="text/css">
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="splash" onclick="enter()" style="display: none;" />
+</body>
+<script type="text/javascript">
+    const post = (uri, body, success) => {
+        let header = {};
+        fetch(uri, {
+            method: 'POST',
+            headers: header,
+            body: JSON.stringify(body)
+        }).then(response => {
+            if (response.ok && success)
+                response.json().then(success);
+        });
+    }
+    post('/keyvalue/object', { key: 'setting.splash.' }, json => {
+        if (!json.data)
+            return;
+
+        if (json.data['setting.splash.wei-xin'] === '1' && navigator.userAgent.toLowerCase().indexOf('micromessenger') === -1) {
+            location.href = json.data['setting.splash.illegal'];
+
+            return;
+        }
+
+        if (json.data['setting.splash.image']) {
+            let splash = document.querySelector('#splash');
+            splash.setAttribute('src', json.data['setting.splash.image']);
+            splash.setAttribute('style', '');
+        }
+    });
+    const enter = () => {
+        location.href = '/h/index.html' + (location.search || '');
+    };
+</script>
+
+</html>

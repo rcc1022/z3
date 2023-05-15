@@ -1,0 +1,14 @@
+{
+    "origin": [
+        "*"
+    ],
+    "methods": [
+        "GET",
+        "POST"
+    ],
+    "headers": [
+        "Content-Type",
+        "x-requested-with",
+        "photon-session-id"
+    ]
+}

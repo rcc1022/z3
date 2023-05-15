@@ -1,0 +1,19 @@
+{
+    "services": [{
+        "uri": "query",
+        "parameters": [{
+            "name": "key",
+            "type": "string",
+            "require": true
+        }],
+        "response": "pagination"
+    }, {
+        "uri": "get",
+        "parameters": [{
+            "name": "id",
+            "type": "id",
+            "require": true
+        }],
+        "response": "model"
+    }]
+}

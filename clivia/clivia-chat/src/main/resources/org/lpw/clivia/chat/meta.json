@@ -1,0 +1,39 @@
+{
+    "key": "clivia.chat",
+    "uri": "/chat/",
+    "props": [
+        {
+            "name": "group"
+        },
+        {
+            "name": "sender"
+        },
+        {
+            "name": "genre"
+        },
+        {
+            "name": "body"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

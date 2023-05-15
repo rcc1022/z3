@@ -1,0 +1,45 @@
+{
+    "key": "clivia.group.member",
+    "uri": "/group/member/",
+    "props": [
+        {
+            "name": "group"
+        },
+        {
+            "name": "user"
+        },
+        {
+            "name": "grade"
+        },
+        {
+            "name": "memo"
+        },
+        {
+            "name": "state"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "user": {
+        "type": "grid"
+    }
+}

@@ -1,0 +1,108 @@
+{
+  "key": "eagle.game",
+  "uri": "/game/",
+  "props": [
+    {
+      "name": "sort"
+    },
+    {
+      "name": "name"
+    },
+    {
+      "name": "cover",
+      "type": "image",
+      "upload": "eagle.game"
+    },
+    {
+      "name": "type",
+      "labels": ".types"
+    },
+    {
+      "name": "water",
+      "type": "percent"
+    },
+    {
+      "name": "lose",
+      "type": "percent"
+    },
+    {
+      "name": "commission",
+      "type": "percent"
+    },
+    {
+      "name": "min"
+    },
+    {
+      "name": "max"
+    },
+    {
+      "name": "total"
+    },
+    {
+      "name": "close"
+    },
+    {
+      "name": "robot"
+    },
+    {
+      "name": "on",
+      "type": "switch",
+      "service": "on"
+    },
+    {
+      "name": "rule",
+      "type": "text-area"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "props": [
+      {
+        "name": "sort"
+      },
+      {
+        "name": "name"
+      },
+      {
+        "name": "cover"
+      },
+      {
+        "name": "type"
+      },
+      {
+        "name": "on"
+      }
+    ],
+    "ops": [
+      {
+        "type": "modify"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create"
+      }
+    ]
+  },
+  "create": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  },
+  "modify": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  }
+}

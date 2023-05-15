@@ -1,0 +1,57 @@
+{
+    "name": "clivia.alipay",
+    "services": [
+        {
+            "uri": "query",
+            "psid": true,
+            "response": [
+                "model"
+            ]
+        },
+        {
+            "uri": "save",
+            "psid": true,
+            "parameters": [
+                {
+                    "name": "id",
+                    "type": "id"
+                },
+                {
+                    "name": "key",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "appId",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "privateKey",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "publicKey",
+                    "type": "string",
+                    "require": true
+                }
+            ]
+        },
+        {
+            "uri": "delete",
+            "psid": "true",
+            "parameters": [
+                {
+                    "name": "id",
+                    "type": "id",
+                    "require": true
+                }
+            ]
+        }
+    ]
+}

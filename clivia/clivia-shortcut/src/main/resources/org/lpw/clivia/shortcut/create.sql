@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS t_shortcut;
+CREATE TABLE t_shortcut
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_code VARCHAR(255) NOT NULL COMMENT '编码',
+  c_md5 CHAR(32) NOT NULL COMMENT 'MD5',
+  c_length INT DEFAULT 0 COMMENT '长度',
+  c_value TEXT DEFAULT NULL COMMENT '值',
+  c_time DATETIME DEFAULT NULL COMMENT '时间',
+
+  PRIMARY KEY pk(c_id) USING HASH,
+  UNIQUE KEY uk_code(c_code) USING HASH,
+  UNIQUE KEY uk_md5_length(c_md5,c_length) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.lpw.photon</groupId>
+    <artifactId>photon</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <modules>
+        <module>photon-base</module>
+        <module>photon-dao</module>
+        <module>photon-ctrl</module>
+        <module>photon-ctrl-http</module>
+        <module>photon-ctrl-socket</module>
+        <module>photon-script</module>
+        <module>photon-wormhole</module>
+        <module>photon-chrome</module>
+        <module>photon-office</module>
+        <module>photon-lucene</module>
+        <module>photon-pdf</module>
+        <module>photon-hadoop</module>
+        <module>photon-web</module>
+    </modules>
+
+    <name>photon</name>
+    <url>https://github.com/heisedebaise/photon</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+</project>

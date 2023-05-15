@@ -1,0 +1,83 @@
+{
+    "key": "eagle.pcnum",
+    "uri": "/pcnum/",
+    "props": [
+        {
+            "name": "type",
+            "labels": "types"
+        },
+        {
+            "name": "issue"
+        },
+        {
+            "name": "num1"
+        },
+        {
+            "name": "num2"
+        },
+        {
+            "name": "num3"
+        },
+        {
+            "name": "sum",
+            "type": "read-only"
+        },
+        {
+            "name": "status",
+            "labels": "statuses",
+            "type": "read-only"
+        },
+        {
+            "name": "time",
+            "type": "read-only"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "type"
+            },
+            {
+                "name": "issue"
+            }
+        ],
+        "ops": [
+            {
+                "type": "modify",
+                "when": "model.status==0"
+            },
+            {
+                "service": "open",
+                "reload": true
+            },
+            {
+                "type": "delete",
+                "when": "model.status==0"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

@@ -1,0 +1,160 @@
+.olcs-member {
+    max-height: 80vh;
+    overflow: auto;
+}
+
+.olcs-item {
+    cursor: pointer;
+}
+
+.olcs-item .ant-list-item-meta-description {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.olcs-item-unread {
+    display: inline-block;
+    padding-left: 8px;
+    color: #ff7875;
+}
+
+.olcs-content {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.olcs-avatar-nick {
+    padding: 8px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.olcs-avatar-nick .nick {
+    padding-left: 8px;
+}
+
+.olcs-user-memo {
+    color: #1890ff;
+}
+
+.olcs-messages {
+    height: 50vh;
+    overflow: auto;
+    background-color: rgb(245, 245, 245);
+}
+
+.olcs-message-user {
+    padding: 8px;
+}
+
+.olcs-message-user .olcs-message-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 8px;
+}
+
+.olcs-message-user .olcs-message-text {
+    display: inline-block;
+    padding: 4px 8px;
+    max-width: 50vw;
+    border-radius: 0 4px 4px 4px;
+    background-color: #fff;
+}
+
+.olcs-message-replier {
+    padding: 8px;
+    text-align: right;
+}
+
+.olcs-message-replier .olcs-message-content {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 8px;
+}
+
+.olcs-message-replier .olcs-message-text,
+.olcs-message-replier .olcs-message-faq {
+    display: inline-block;
+    padding: 4px 8px;
+    max-width: 50vw;
+    background-color: rgb(149, 236, 105);
+    border-radius: 4px 0 4px 4px;
+    text-align: left;
+}
+
+.olcs-message-delete {
+    margin: -15px -14px 0 0;
+    text-align: right;
+}
+
+.olcs-message-read,
+.olcs-message-unread {
+    display: inline-block;
+    vertical-align: bottom;
+    padding-right: 4px;
+    font-size: 0.5rem;
+}
+
+.olcs-message-read {
+    color: #ccc;
+}
+
+.olcs-message-unread {
+    color: rgb(46, 135, 255);
+}
+
+.olcs-message-image {
+    display: inline-block;
+}
+
+.olcs-message-image img {
+    max-width: 25vw;
+    max-height: 25vh;
+}
+
+.olcs-message-time {
+    color: #ccc;
+}
+
+.olcs-tools {
+    border-top: 1px solid #d9d9d9;
+}
+
+.olcs-tool {
+    display: inline-block;
+    padding-left: 8px;
+    font-size: 24px;
+}
+
+.olcs-faqs {
+    width: 40vw;
+    max-height: 40vh;
+    overflow: auto;
+}
+
+.olcs-input {
+    padding: 8px;
+}
+
+.olcs-input textarea {
+    width: 100%;
+    height: 64px;
+    border: none;
+    outline: none;
+}
+
+.olcs-send {
+    padding: 0 8px 8px 0;
+    text-align: right;
+}
+
+.olcs-send-enter {
+    display: inline-block;
+    margin-right: 8px;
+    color: #ccc;
+}
+
+.lazy-avatar{
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+}

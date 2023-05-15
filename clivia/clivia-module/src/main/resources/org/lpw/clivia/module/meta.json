@@ -1,0 +1,115 @@
+{
+    "key": "clivia.module",
+    "uri": "/module/",
+    "props": [
+        {
+            "name": "main"
+        },
+        {
+            "name": "code"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "execute",
+            "values": "executes",
+            "multiple": true
+        },
+        {
+            "name": "columns",
+            "type": "array",
+            "children": [
+                {
+                    "name": "name",
+                    "label": ".column.name"
+                },
+                {
+                    "name": "explain",
+                    "label": ".column.explain"
+                },
+                {
+                    "name": "type",
+                    "label": ".column.type",
+                    "values": ".column.types"
+                },
+                {
+                    "name": "key",
+                    "label": ".column.key",
+                    "labels": ".column.keys"
+                },
+                {
+                    "name": "require",
+                    "label": ".column.require",
+                    "labels": ".column.no-yes"
+                },
+                {
+                    "name": "search",
+                    "label": ".column.search",
+                    "labels": ".column.no-yes"
+                },
+                {
+                    "name": "order",
+                    "label": ".column.order",
+                    "labels": ".column.orders"
+                }
+            ]
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "props": [
+            {
+                "name": "main"
+            },
+            {
+                "name": "code"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "execute"
+            }
+        ],
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "service": "generate",
+                "reload": true
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "opsize": [
+            3,
+            3
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

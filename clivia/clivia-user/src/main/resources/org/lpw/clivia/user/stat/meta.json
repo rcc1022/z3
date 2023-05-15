@@ -1,0 +1,43 @@
+{
+    "key": "clivia.user.stat",
+    "uri": "/user/stat/",
+    "props": [{
+            "name": "date"
+        },
+        {
+            "name": "count"
+        },
+        {
+            "name": "register"
+        },
+        {
+            "name": "online"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [{
+            "name": "date",
+            "type": "date-range"
+        }]
+    },
+    "today": {
+        "type": "statistic",
+        "props": [{
+                "name": "count"
+            },
+            {
+                "name": "register"
+            }
+        ]
+    },
+    "line": {
+        "type": "line"
+    },
+    "column": {
+        "type": "column"
+    },
+    "pie": {
+        "type": "pie"
+    }
+}

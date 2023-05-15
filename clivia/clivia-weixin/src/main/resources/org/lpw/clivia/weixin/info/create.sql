@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS t_weixin_info;
+CREATE TABLE t_weixin_info
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_key VARCHAR(255) DEFAULT NULL COMMENT '引用KEY',
+  c_app_id VARCHAR(255) DEFAULT NULL COMMENT 'APP ID',
+  c_union_id VARCHAR(255) NOT NULL COMMENT 'Union ID',
+  c_open_id VARCHAR(255) NOT NULL COMMENT 'Open ID',
+  c_time DATETIME DEFAULT NULL COMMENT '绑定时间',
+
+  PRIMARY KEY pk(c_id) USING HASH,
+  KEY k_union_id(c_union_id) USING HASH,
+  UNIQUE KEY uk_open_id(c_open_id) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

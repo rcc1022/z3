@@ -1,0 +1,280 @@
+[
+  {
+    "label": "重要指标",
+    "service": "/console/dashboard"
+  },
+  {
+    "label": "游戏管理",
+    "items": [
+      {
+        "label": "游戏配置",
+        "service": "/game/query"
+      },
+      {
+        "label": "动态调节",
+        "service": "/rate/query"
+      },
+      {
+        "label": "单局控杀",
+        "service": "/control/single-query",
+        "parameter": {
+          "mode": 0
+        }
+      },
+      {
+        "label": "智能控杀",
+        "service": "/control/query",
+        "parameter": {
+          "mode": 1
+        }
+      },
+      {
+        "label": "控杀",
+        "service": "/setting/control"
+      }
+    ]
+  },
+  {
+    "label": "奖期管理",
+    "items": [
+      {
+        "label": "PC开奖",
+        "service": "/pcnum/query"
+      },
+      {
+        "label": "赛车开奖",
+        "service": "/scnum/query"
+      },
+      {
+        "label": "澳5&时时彩开奖",
+        "service": "/wunum/query"
+      },
+      {
+        "label": "足球开奖",
+        "service": "/football/query"
+      }
+    ]
+  },
+  {
+    "label": "系统设置",
+    "items": [
+      {
+        "label": "进入",
+        "service": "/setting/splash"
+      },
+      {
+        "label": "首页",
+        "service": "/setting/home"
+      },
+      {
+        "label": "微信",
+        "service": "/setting/weixin"
+      },
+      {
+        "label": "同步",
+        "service": "/setting/synch"
+      },
+      {
+        "label": "数据",
+        "service": "/setting/data"
+      },
+      {
+        "label": "用户",
+        "service": "/setting/user"
+      }
+    ]
+  },
+  {
+    "label": "会员管理",
+    "items": [
+      {
+        "label": "会员列表",
+        "service": "/player/query"
+      },
+      {
+        "label": "代理列表",
+        "service": "/player/juniors"
+      }
+    ]
+  },
+  {
+    "label": "机器人管理",
+    "items": [
+      {
+        "label": "机器人列表",
+        "service": "/robot/query"
+      },
+      {
+        "label": "机器人设置",
+        "service": "/setting/robot"
+      }
+    ]
+  },
+  {
+    "label": "财务报表",
+    "items": [
+      {
+        "label": "总报表",
+        "service": "/daily/all"
+      },
+      {
+        "label": "用户报表",
+        "service": "/bet/sum2"
+      },
+      {
+        "label": "详细报表",
+        "service": "/player/ledger/query"
+      },
+      {
+        "label": "彩种报表",
+        "service": "/daily/query"
+      },
+      {
+        "label": "分类报表",
+        "service": "/bet/sum1"
+      }
+    ]
+  },
+  {
+    "label": "上下分请求",
+    "items": [
+      {
+        "label": "上分配置",
+        "service": "/channel/query"
+      },
+      {
+        "label": "下分配置",
+        "service": "/setting/withdraw"
+      },
+      {
+        "label": "上分请求",
+        "service": "/player/deposit/query"
+      },
+      {
+        "label": "下分请求",
+        "service": "/player/withdraw/query"
+      }
+    ]
+  },
+  {
+    "label": "客服监控",
+    "items": [
+      {
+        "label": "投注记录",
+        "service": "/bet/query"
+      },
+      {
+        "label": "未结算清空",
+        "service": "/bet/unsettle"
+      },
+      {
+        "label": "即时注单",
+        "service": "/bet/immediately"
+      },
+      {
+        "label": "投注合计",
+        "service": "/bet/total"
+      }
+    ]
+  },
+  {
+    "label": "返水管理",
+    "items": [
+      {
+        "label": "实时返水列表",
+        "service": "/player/profit/water"
+      },
+      {
+        "label": "待返水统计",
+        "service": "/player/profit/towater"
+      },
+      {
+        "label": "已返水列表",
+        "service": "/player/ledger/water"
+      },
+      {
+        "label": "拒绝返水列表",
+        "service": "/player/unwater/query"
+      }
+    ]
+  },
+  {
+    "label": "域名管理",
+    "items": [
+      {
+        "label": "入口域名管理",
+        "service": "/domain/query0",
+        "parameter": {
+          "type": 0
+        }
+      },
+      {
+        "label": "授权域名管理",
+        "service": "/domain/query2",
+        "parameter": {
+          "type": 1
+        }
+      },
+      {
+        "label": "落地域名管理",
+        "service": "/domain/query2",
+        "parameter": {
+          "type": 2
+        }
+      },
+      {
+        "label": "视频域名管理",
+        "service": "/domain/query3",
+        "parameter": {
+          "type": 3
+        }
+      }
+    ]
+  },
+  {
+    "label": "房间入口",
+    "service": "/domain/entrance"
+  },
+  {
+    "label": "开发",
+    "items": [
+      {
+        "label": "模块",
+        "service": "/module/query"
+      }
+    ]
+  },
+  {
+    "label": "系统",
+    "items": [
+      {
+        "label": "普通用户",
+        "service": "/user/query",
+        "parameter": {
+          "minGrade": 0,
+          "maxGrade": 0
+        }
+      },
+      {
+        "label": "管理员",
+        "service": "/user/query",
+        "parameter": {
+          "minGrade": 89,
+          "maxGrade": 98
+        }
+      },
+      {
+        "label": "权限设置",
+        "service": "/user/crosier/query"
+      },
+      {
+        "label": "在线用户",
+        "service": "/user/online/query"
+      },
+      {
+        "label": "用户统计",
+        "service": "/user/stat/query"
+      }
+    ]
+  }
+]

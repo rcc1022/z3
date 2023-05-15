@@ -1,0 +1,313 @@
+{
+    "key": "clivia.user",
+    "uri": "/user/",
+    "props": [{
+            "name": "avatar",
+            "type": "image"
+        },
+        {
+            "name": "idcard"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "nick"
+        },
+        {
+            "name": "mobile"
+        },
+        {
+            "name": "email"
+        },
+        {
+            "name": "weixin"
+        },
+        {
+            "name": "qq"
+        },
+        {
+            "name": "gender",
+            "labels": "genders"
+        },
+        {
+            "name": "birthday",
+            "type": "date"
+        },
+        {
+            "name": "code",
+            "type": "read-only"
+        },
+        {
+            "name": "register",
+            "type": "read-only"
+        },
+        {
+            "name": "grade",
+            "type": "dselect",
+            "service": "/user/crosier/grades",
+            "vname": "grade"
+        },
+        {
+            "name": "state",
+            "type": "switch",
+            "service": "state"
+        },
+        {
+            "name": "from",
+            "type": "read-only"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "props": [{
+                "name": "avatar",
+                "type": "image"
+            },
+            {
+                "name": "details",
+                "type": "multi-line",
+                "lines": [{
+                        "name": "idcard"
+                    },
+                    {
+                        "name": "name"
+                    },
+                    {
+                        "name": "nick"
+                    },
+                    {
+                        "name": "mobile"
+                    },
+                    {
+                        "name": "email"
+                    },
+                    {
+                        "name": "weixin"
+                    },
+                    {
+                        "name": "qq"
+                    },
+                    {
+                        "name": "gender"
+                    },
+                    {
+                        "name": "birthday"
+                    },
+                    {
+                        "name": "from"
+                    }
+                ]
+            },
+            {
+                "name": "code",
+                "type": "read-only"
+            },
+            {
+                "name": "register",
+                "type": "read-only"
+            },
+            {
+                "name": "grade",
+                "type": "dselect",
+                "service": "/user/crosier/grades",
+                "vname": "grade"
+            },
+            {
+                "name": "state",
+                "type": "switch",
+                "service": "state"
+            }
+        ],
+        "search": [{
+                "name": "uid"
+            },
+            {
+                "name": "idcard"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "nick"
+            },
+            {
+                "name": "mobile"
+            },
+            {
+                "name": "email"
+            },
+            {
+                "name": "weixin"
+            },
+            {
+                "name": "qq"
+            },
+            {
+                "name": "code"
+            },
+            {
+                "name": "register",
+                "type": "date-range"
+            },
+            {
+                "name": "state",
+                "labels": "states"
+            },
+            {
+                "name": "from"
+            }
+        ],
+        "ops": [{
+                "label": "modify",
+                "service": "update"
+            },
+            {
+                "service": "reset-password",
+                "reload": true
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "opsize": [
+            8
+        ],
+        "toolbar": [{
+            "type": "create",
+            "parameter": {
+                "state": 1
+            }
+        }]
+    },
+    "create": {
+        "type": "form",
+        "props": [{
+                "name": "uid"
+            },
+            {
+                "name": "password"
+            },
+            {
+                "name": "avatar"
+            },
+            {
+                "name": "idcard"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "nick"
+            },
+            {
+                "name": "mobile"
+            },
+            {
+                "name": "email"
+            },
+            {
+                "name": "weixin"
+            },
+            {
+                "name": "qq"
+            },
+            {
+                "name": "gender"
+            },
+            {
+                "name": "birthday"
+            },
+            {
+                "name": "grade"
+            },
+            {
+                "name": "state"
+            }
+        ],
+        "toolbar": [{
+            "type": "save",
+            "service": "new",
+            "success": "query"
+        }]
+    },
+    "update": {
+        "type": "form",
+        "toolbar": [{
+            "type": "save",
+            "service": "update",
+            "success": "query"
+        }]
+    },
+    "sign": {
+        "type": "form",
+        "props": [{
+                "name": "avatar"
+            },
+            {
+                "name": "idcard"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "nick"
+            },
+            {
+                "name": "mobile"
+            },
+            {
+                "name": "email"
+            },
+            {
+                "name": "weixin"
+            },
+            {
+                "name": "qq"
+            },
+            {
+                "name": "gender"
+            },
+            {
+                "name": "birthday"
+            },
+            {
+                "name": "code"
+            },
+            {
+                "name": "register"
+            },
+            {
+                "name": "agreement",
+                "type": "agreement",
+                "agreement": "setting.agreement.user.sign-up"
+            }
+        ],
+        "toolbar": [{
+            "service": "modify"
+        }]
+    },
+    "password": {
+        "type": "form",
+        "props": [{
+                "label": ".password.old",
+                "name": "old",
+                "type": "password"
+            },
+            {
+                "label": ".password.new",
+                "name": "new",
+                "type": "password"
+            },
+            {
+                "label": ".password.repeat",
+                "name": "repeat",
+                "type": "password"
+            }
+        ],
+        "toolbar": [{
+            "label": "modify",
+            "service": "password"
+        }]
+    }
+}

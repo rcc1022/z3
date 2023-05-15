@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS t_domain;
+CREATE TABLE t_domain
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_type INT DEFAULT 0 COMMENT '类型：0-入口；1-授权；2-落地',
+  c_name VARCHAR(255) DEFAULT NULL COMMENT '域名',
+  c_status INT DEFAULT 0 COMMENT '状态：0-未启用；1-启用',
+  c_qrcode VARCHAR(255) DEFAULT NULL COMMENT '房间入口',
+  c_create DATETIME DEFAULT NULL COMMENT '创建时间',
+  c_modify DATETIME DEFAULT NULL COMMENT '修改时间',
+
+  PRIMARY KEY pk(c_id) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

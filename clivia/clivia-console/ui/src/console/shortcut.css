@@ -1,0 +1,24 @@
+.console-shortcut {
+    display: inline-block;
+}
+
+.console-shortcut-item {
+    display: inline-block;
+    padding: 8px;
+    margin-left: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.console-shortcut-item img {
+    display: inline-block;
+    width: 16px;
+}
+
+.console-shortcut-ringtone {
+    position: absolute;
+    left: -100vw;
+    top: -100vh;
+}

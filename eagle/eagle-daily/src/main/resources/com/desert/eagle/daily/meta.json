@@ -1,0 +1,209 @@
+{
+  "key": "eagle.daily",
+  "uri": "/daily/",
+  "props": [
+    {
+      "name": "date"
+    },
+    {
+      "name": "game",
+      "type": "dselect",
+      "service": "/game/query"
+    },
+    {
+      "name": "player"
+    },
+    {
+      "name": "count"
+    },
+    {
+      "name": "bet",
+      "type": "money"
+    },
+    {
+      "name": "profit",
+      "type": "money",
+      "style": [
+        {
+          "condition": "model.profit>0",
+          "value": {
+            "color": "green"
+          }
+        },
+        {
+          "condition": "model.profit<0",
+          "value": {
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "name": "water",
+      "type": "money"
+    },
+    {
+      "name": "water0",
+      "type": "money"
+    },
+    {
+      "name": "commission",
+      "type": "money"
+    },
+    {
+      "name": "gain",
+      "type": "money",
+      "style": [
+        {
+          "condition": "model.gain>0",
+          "value": {
+            "color": "green"
+          }
+        },
+        {
+          "condition": "model.gain<0",
+          "value": {
+            "color": "red"
+          }
+        }
+      ]
+    }
+  ],
+  "all": {
+    "type": "grid",
+    "props": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "register"
+      },
+      {
+        "name": "player"
+      },
+      {
+        "name": "deposit",
+        "type": "money"
+      },
+      {
+        "name": "gift",
+        "type": "money"
+      },
+      {
+        "name": "sign"
+      },
+      {
+        "name": "withdraw"
+      },
+      {
+        "name": "water"
+      },
+      {
+        "name": "water0"
+      },
+      {
+        "name": "bet"
+      },
+      {
+        "name": "profit"
+      },
+      {
+        "name": "commission"
+      },
+      {
+        "name": "gain"
+      }
+    ]
+  },
+  "query": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "date",
+        "type": "date-range"
+      },
+      {
+        "name": "game"
+      }
+    ],
+    "props": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "bet",
+        "label": "liushui"
+      },
+      {
+        "name": "water"
+      },
+      {
+        "name": "water0"
+      },
+      {
+        "name": "gain"
+      }
+    ],
+    "ops": [
+      {
+        "service": "/bet/game",
+        "label": "liushui-xiangqing"
+      }
+    ]
+  },
+  "today": {
+    "type": "statistic",
+    "props": [
+      {
+        "name": "gain"
+      },
+      {
+        "name": "deposit"
+      },
+      {
+        "name": "withdraw"
+      },
+      {
+        "name": "player"
+      },
+      {
+        "name": "count"
+      },
+      {
+        "name": "bet"
+      },
+      {
+        "name": "profit"
+      },
+      {
+        "name": "water0"
+      },
+      {
+        "name": "commission"
+      }
+    ]
+  },
+  "day7": {
+    "type": "grid",
+    "props": [
+      {
+        "name": "date"
+      },
+      {
+        "name": "player"
+      },
+      {
+        "name": "bet",
+        "type": ""
+      },
+      {
+        "name": "profit",
+        "type": ""
+      },
+      {
+        "name": "gain",
+        "type": ""
+      }
+    ]
+  }
+}

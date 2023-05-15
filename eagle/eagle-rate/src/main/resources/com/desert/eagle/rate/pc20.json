@@ -1,0 +1,166 @@
+[
+    {
+        "name": "双面",
+        "items": [
+            {
+                "name": "大",
+                "amount": 200
+            },
+            {
+                "name": "小",
+                "amount": 200
+            },
+            {
+                "name": "单",
+                "amount": 200
+            },
+            {
+                "name": "双",
+                "amount": 200
+            },
+            {
+                "name": "大单",
+                "amount": 420
+            },
+            {
+                "name": "大双",
+                "amount": 460
+            },
+            {
+                "name": "小单",
+                "amount": 460
+            },
+            {
+                "name": "小双",
+                "amount": 420
+            },
+            {
+                "name": "极大",
+                "amount": 1500,
+                "param": 22
+            },
+            {
+                "name": "极小",
+                "amount": 1500,
+                "param": 5
+            }
+        ]
+    },
+    {
+        "name": "特码",
+        "items": [
+            {
+                "name": "0",
+                "amount": 72000
+            },
+            {
+                "name": "1",
+                "amount": 24000
+            },
+            {
+                "name": "2",
+                "amount": 12000
+            },
+            {
+                "name": "3",
+                "amount": 7200
+            },
+            {
+                "name": "4",
+                "amount": 4800
+            },
+            {
+                "name": "5",
+                "amount": 3300
+            },
+            {
+                "name": "6",
+                "amount": 2500
+            },
+            {
+                "name": "7",
+                "amount": 2000
+            },
+            {
+                "name": "8",
+                "amount": 1800
+            },
+            {
+                "name": "9",
+                "amount": 1600
+            },
+            {
+                "name": "10",
+                "amount": 1500
+            },
+            {
+                "name": "11",
+                "amount": 1400
+            },
+            {
+                "name": "12",
+                "amount": 1300
+            },
+            {
+                "name": "13",
+                "amount": 1100
+            },
+            {
+                "name": "14",
+                "amount": 1100
+            },
+            {
+                "name": "15",
+                "amount": 1300
+            },
+            {
+                "name": "16",
+                "amount": 1400
+            },
+            {
+                "name": "17",
+                "amount": 1500
+            },
+            {
+                "name": "18",
+                "amount": 1600
+            },
+            {
+                "name": "19",
+                "amount": 1800
+            },
+            {
+                "name": "20",
+                "amount": 2000
+            },
+            {
+                "name": "21",
+                "amount": 2500
+            },
+            {
+                "name": "22",
+                "amount": 3300
+            },
+            {
+                "name": "23",
+                "amount": 4800
+            },
+            {
+                "name": "24",
+                "amount": 7200
+            },
+            {
+                "name": "25",
+                "amount": 12000
+            },
+            {
+                "name": "26",
+                "amount": 24000
+            },
+            {
+                "name": "27",
+                "amount": 72000
+            }
+        ]
+    }
+]

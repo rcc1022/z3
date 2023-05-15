@@ -1,0 +1,58 @@
+{
+    "key": "clivia.shortcut",
+    "props": [
+        {
+            "name": "code"
+        },
+        {
+            "name": "md5"
+        },
+        {
+            "name": "length"
+        },
+        {
+            "name": "value"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete",
+                "service": ".delete",
+                "success": ".query"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": ".save",
+                "success": ".query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": ".save",
+                "success": ".query"
+            }
+        ]
+    }
+}

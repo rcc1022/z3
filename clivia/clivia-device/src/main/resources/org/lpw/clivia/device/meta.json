@@ -1,0 +1,55 @@
+{
+    "key": "clivia.device",
+    "uri": "/device/",
+    "props": [
+        {
+            "name": "user"
+        },
+        {
+            "name": "sid"
+        },
+        {
+            "name": "type"
+        },
+        {
+            "name": "identifier"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

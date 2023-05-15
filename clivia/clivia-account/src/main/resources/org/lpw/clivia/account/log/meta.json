@@ -1,0 +1,42 @@
+{
+    "key": "clivia.account.log",
+    "props": [
+        {
+            "name": "user.auth.uid",
+            "label": "clivia.account.log.uid"
+        },
+        {
+            "name": "owner"
+        },
+        {
+            "name": "type",
+            "format": "number"
+        },
+        {
+            "name": "channel"
+        },
+        {
+            "name": "amount",
+            "format": "money"
+        },
+        {
+            "name": "balance",
+            "format": "money"
+        },
+        {
+            "name": "state",
+            "select": {
+                "name": "states"
+            }
+        },
+        {
+            "name": "start"
+        },
+        {
+            "name": "end"
+        }
+    ],
+    "query": {
+        "type": "grid"
+    }
+}

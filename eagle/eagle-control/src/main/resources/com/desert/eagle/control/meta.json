@@ -1,0 +1,128 @@
+{
+  "key": "eagle.control",
+  "uri": "/control/",
+  "props": [
+    {
+      "name": "type",
+      "labels": "types"
+    },
+    {
+      "name": "win",
+      "type": "money"
+    },
+    {
+      "name": "winRate",
+      "type": "percent"
+    },
+    {
+      "name": "toWin",
+      "type": "money"
+    },
+    {
+      "name": "lose",
+      "type": "money"
+    },
+    {
+      "name": "loseRate",
+      "type": "percent"
+    },
+    {
+      "name": "toLose",
+      "type": "money"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "ops": [
+      {
+        "type": "modify"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create"
+      }
+    ]
+  },
+  "create": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  },
+  "modify": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  },
+  "single-query": {
+    "type": "grid",
+    "props": [
+      {
+        "name": "type"
+      },
+      {
+        "name": "winRate"
+      }
+    ],
+    "ops": [
+      {
+        "type": "modify",
+        "service": "single-modify"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create",
+        "service": "single-create"
+      }
+    ]
+  },
+  "single-create": {
+    "type": "form",
+    "props": [
+      {
+        "name": "type"
+      },
+      {
+        "name": "winRate"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "single-query"
+      }
+    ]
+  },
+  "single-modify": {
+    "type": "form",
+    "props": [
+      {
+        "name": "type"
+      },
+      {
+        "name": "winRate"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "single-query"
+      }
+    ]
+  }
+}

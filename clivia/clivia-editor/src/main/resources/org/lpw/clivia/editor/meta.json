@@ -1,0 +1,52 @@
+{
+  "key": "clivia.editor",
+  "uri": "/editor/",
+  "props": [
+    {
+      "name": "key"
+    },
+    {
+      "name": "order"
+    },
+    {
+      "name": "content"
+    },
+    {
+      "name": "time"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "ops": [
+      {
+        "type": "modify"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create"
+      }
+    ]
+  },
+  "create": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  },
+  "modify": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  }
+}

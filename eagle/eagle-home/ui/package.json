@@ -1,0 +1,20 @@
+{
+  "name": "ui",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "fingerprintjs2": "^2.1.4",
+    "md5": "^2.3.0",
+    "vant": "^4.0.1",
+    "vue": "^3.2.38",
+    "vue3-emoji-picker": "^1.1.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.3",
+    "vite": "^3.0.9"
+  }
+}

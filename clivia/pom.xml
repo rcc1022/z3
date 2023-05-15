@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.lpw.clivia</groupId>
+    <artifactId>clivia</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0</version>
+    <name>clivia</name>
+    <url>https://github.com/heisedebaise/clivia</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <modules>
+        <module>clivia-base</module>
+        <module>clivia-keyvalue</module>
+        <module>clivia-category</module>
+        <module>clivia-popular</module>
+        <module>clivia-shortcut</module>
+        <module>clivia-chrome</module>
+        <module>clivia-ad</module>
+        <module>clivia-upgrader</module>
+        <module>clivia-push</module>
+        <module>clivia-increment</module>
+        <module>clivia-module</module>
+        <module>clivia-dict</module>
+        <module>clivia-pair</module>
+        <module>clivia-faq</module>
+        <module>clivia-editor</module>
+        <module>clivia-user</module>
+        <module>clivia-account</module>
+        <module>clivia-payment</module>
+        <module>clivia-transfer</module>
+        <module>clivia-weixin</module>
+        <module>clivia-alipay</module>
+        <module>clivia-wps</module>
+        <module>clivia-customerservice</module>
+        <module>clivia-group</module>
+        <module>clivia-chat</module>
+        <module>clivia-device</module>
+        <module>clivia-olcs</module>
+        <module>clivia-notification</module>
+        <module>clivia-console</module>
+        <module>clivia-api</module>
+        <module>clivia-web</module>
+    </modules>
+</project>

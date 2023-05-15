@@ -1,0 +1,12 @@
+DROP TABLE IF EXISTS t_user_inviter;
+CREATE TABLE t_user_inviter
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_psid VARCHAR(255) NOT NULL COMMENT '访客PSID',
+  c_code VARCHAR(255) DEFAULT NULL COMMENT '推荐码',
+  c_time DATETIME NOT NULL COMMENT '时间',
+
+  PRIMARY KEY pk(c_id) USING HASH,
+  UNIQUE KEY uk_psid(c_psid) USING HASH,
+  KEY k_time(c_time) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

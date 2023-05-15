@@ -1,0 +1,26 @@
+[{
+    "span": 8,
+    "cards": [{
+        "title": "今日用户",
+        "reload": true,
+        "service": "/user/stat/today"
+    }, {
+        "title": "今日用户",
+        "reload": true,
+        "service": "/user/stat/pie"
+    }]
+}, {
+    "span": 8,
+    "cards": [{
+        "title": "一周统计",
+        "reload": true,
+        "service": "/user/stat/line"
+    }]
+}, {
+    "span": 8,
+    "cards": [{
+        "title": "一周统计",
+        "reload": true,
+        "service": "/user/stat/column"
+    }]
+}]

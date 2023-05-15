@@ -1,0 +1,29 @@
+{
+    "key": "clivia.group.friend",
+    "uri": "/group/friend/",
+    "props": [
+        {
+            "name": "user"
+        },
+        {
+            "name": "proposer"
+        },
+        {
+            "name": "memo"
+        },
+        {
+            "name": "state"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "user": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "user"
+            }
+        ]
+    }
+}

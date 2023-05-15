@@ -1,0 +1,57 @@
+{
+    "key": "clivia.payment",
+    "props": [
+        {
+            "name": "type"
+        },
+        {
+            "name": "appId"
+        },
+        {
+            "name": "user.code",
+            "label": "clivia.payment.user"
+        },
+        {
+            "name": "amount"
+        },
+        {
+            "name": "orderNo"
+        },
+        {
+            "name": "billNo"
+        },
+        {
+            "name": "tradeNo"
+        },
+        {
+            "name": "state"
+        },
+        {
+            "name": "notice"
+        },
+        {
+            "name": "start"
+        },
+        {
+            "name": "end"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "when": {
+                    "state": 0
+                },
+                "label": "clivia.payment.success",
+                "service": "success",
+                "success": "query"
+            },
+            {
+                "label": "clivia.payment.notice",
+                "service": "notice",
+                "success": "query"
+            }
+        ]
+    }
+}

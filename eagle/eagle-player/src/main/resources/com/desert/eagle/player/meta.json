@@ -1,0 +1,294 @@
+{
+  "key": "eagle.player",
+  "uri": "/player/",
+  "props": [
+    {
+      "name": "uid",
+      "type": "read-only",
+      "sort": "true"
+    },
+    {
+      "name": "user",
+      "type": "user"
+    },
+    {
+      "name": "memo",
+      "type": "edit",
+      "service": "memo",
+      "edit": "设置",
+      "style": [
+        {
+          "color": "#1890ff"
+        }
+      ]
+    },
+    {
+      "name": "invitor",
+      "type": "read-only"
+    },
+    {
+      "name": "balance",
+      "type": "read-only:money",
+      "sort": true
+    },
+    {
+      "name": "profit",
+      "type": "read-only:money",
+      "sort": true,
+      "style": [
+        {
+          "condition": "model.profit>0",
+          "value": {
+            "color": "green"
+          }
+        },
+        {
+          "condition": "model.profit<0",
+          "value": {
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "name": "time",
+      "type": "read-only",
+      "sort": true
+    },
+    {
+      "name": "login",
+      "type": "read-only",
+      "sort": true
+    },
+    {
+      "name": "ip",
+      "type": "read-only"
+    },
+    {
+      "name": "ban",
+      "type": "switch",
+      "service": "ban",
+      "sort": true
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "nick"
+      },
+      {
+        "name": "memo"
+      },
+      {
+        "name": "ban"
+      },
+      {
+        "name": "login",
+        "type": "date-range"
+      }
+    ],
+    "ops": [
+      {
+        "type": "modify",
+        "service": "deposit",
+        "icon": "money"
+      },
+      {
+        "type": "modify",
+        "service": "gift",
+        "icon": "plus"
+      },
+      {
+        "service": "/player/ledger/player",
+        "label": "ledger1",
+        "icon": "card"
+      },
+      {
+        "service": "/player/ledger/player",
+        "label": "ledger2",
+        "icon": "transfer"
+      },
+      {
+        "service": "/player/ledger/player",
+        "label": "ledger3",
+        "icon": "history"
+      },
+      {
+        "type": "modify",
+        "service": "invite",
+        "label": "invite",
+        "icon": "back"
+      }
+    ],
+    "opsize": [
+      99
+    ],
+    "interval": 5
+  },
+  "memo": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "memo",
+        "success": "query"
+      }
+    ]
+  },
+  "deposit": {
+    "type": "form",
+    "props": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "amount"
+      },
+      {
+        "name": "balance"
+      }
+    ],
+    "toolbar": [
+      {
+        "service": "deposit",
+        "success": "query"
+      }
+    ]
+  },
+  "gift": {
+    "type": "form",
+    "props": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "user"
+      },
+      {
+        "name": "memo",
+        "type": "read-only"
+      },
+      {
+        "name": "balance"
+      },
+      {
+        "name": "giftAmount"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "service": "gift",
+        "success": "query"
+      }
+    ]
+  },
+  "juniors": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "nick"
+      },
+      {
+        "name": "memo"
+      },
+      {
+        "name": "ban"
+      },
+      {
+        "name": "date",
+        "type": "date"
+      }
+    ],
+    "props": [
+      {
+        "name": "uid",
+        "type": "read-only",
+        "sort": "true"
+      },
+      {
+        "name": "user",
+        "type": "user"
+      },
+      {
+        "name": "junior",
+        "sort": "true"
+      },
+      {
+        "name": "commission",
+        "type": "money",
+        "sort": "true"
+      },
+      {
+        "name": "commissionBalance",
+        "type": "money",
+        "sort": "true"
+      },
+      {
+        "name": "brokerage",
+        "type": "money"
+      }
+    ],
+    "ops": [
+      {
+        "service": "subquery"
+      }
+    ]
+  },
+  "subquery": {
+    "type": "grid",
+    "props": [
+      {
+        "name": "uid",
+        "sort": "true"
+      },
+      {
+        "name": "user"
+      },
+      {
+        "name": "memo"
+      },
+      {
+        "name": "commissionGenerate",
+        "type": "money",
+        "sort": true
+      }
+    ],
+    "ops": [
+      {
+        "service": "/player/ledger/player",
+        "label": "ledger"
+      },
+      {
+        "service": "/bet/query",
+        "label": "ledger3"
+      }
+    ]
+  },
+  "invite": {
+    "type": "form",
+    "props": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "invitor"
+      },
+      {
+        "name": "newInvitor"
+      }
+    ],
+    "toolbar": [
+      {
+        "service": "invite",
+        "success": "query"
+      }
+    ]
+  }
+}

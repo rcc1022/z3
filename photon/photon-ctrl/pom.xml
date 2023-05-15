@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.lpw.photon</groupId>
+    <artifactId>photon-ctrl</artifactId>
+    <version>1.0</version>
+
+    <name>photon-ctrl</name>
+    <url>https://github.com/heisedebaise/photon</url>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.lpw.photon</groupId>
+            <artifactId>photon-dao</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.lpw.photon</groupId>
+            <artifactId>photon-wormhole</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+</project>

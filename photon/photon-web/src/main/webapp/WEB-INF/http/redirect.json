@@ -1,0 +1,9 @@
+{
+    "uri": "/photon/ctrl-http/redirect",
+    "hosts": [
+        ""
+    ],
+    "regexes": [
+        ""
+    ]
+}

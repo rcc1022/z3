@@ -1,0 +1,188 @@
+{
+  "key": "eagle.player.profit",
+  "uri": "/player/profit/",
+  "props": [
+    {
+      "name": "game",
+      "type": "dselect",
+      "service": "/game/query"
+    },
+    {
+      "name": "player",
+      "type": "user"
+    },
+    {
+      "name": "uid"
+    },
+    {
+      "name": "date"
+    },
+    {
+      "name": "count"
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "water",
+      "type": "money"
+    },
+    {
+      "name": "water0",
+      "type": "money"
+    },
+    {
+      "name": "profit",
+      "type": "money",
+      "style": [
+        {
+          "condition": "model.profit>0",
+          "value": {
+            "color": "green"
+          }
+        },
+        {
+          "condition": "model.profit<0",
+          "value": {
+            "color": "red"
+          }
+        }
+      ]
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "date",
+        "type": "date-range"
+      },
+      {
+        "name": "uid"
+      },
+      {
+        "name": "nick"
+      }
+    ],
+    "props": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "player"
+      },
+      {
+        "name": "date"
+      },
+      {
+        "name": "amount"
+      },
+      {
+        "name": "water"
+      },
+      {
+        "name": "water0"
+      },
+      {
+        "name": "profit"
+      }
+    ]
+  },
+  "water": {
+    "type": "grid",
+    "props": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "player",
+        "type": "user"
+      },
+      {
+        "name": "balance",
+        "type": "money"
+      },
+      {
+        "name": "deposit",
+        "type": "money"
+      },
+      {
+        "name": "amount",
+        "type": "money"
+      },
+      {
+        "name": "win",
+        "type": "money"
+      },
+      {
+        "name": "profit",
+        "type": "money"
+      },
+      {
+        "name": "water",
+        "type": "money"
+      },
+      {
+        "name": "water0",
+        "type": "money"
+      }
+    ]
+  },
+  "towater": {
+    "type": "grid",
+    "props": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "player",
+        "type": "user"
+      },
+      {
+        "name": "balance",
+        "type": "money"
+      },
+      {
+        "name": "deposit",
+        "type": "money"
+      },
+      {
+        "name": "amount",
+        "type": "money"
+      },
+      {
+        "name": "win",
+        "type": "money"
+      },
+      {
+        "name": "profit",
+        "type": "money"
+      },
+      {
+        "name": "water",
+        "type": "money"
+      },
+      {
+        "name": "water0",
+        "type": "money"
+      }
+    ],
+    "ops": [
+      {
+        "service": "pass",
+        "reload": true
+      },
+      {
+        "service": "reject",
+        "reload": true
+      }
+    ],
+    "toolbar": [
+      {
+        "service": "pass-all",
+        "reload": true
+      }
+    ]
+  }
+}

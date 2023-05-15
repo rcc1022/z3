@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS t_olcs_faq;
+CREATE TABLE t_olcs_faq
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_sort INT DEFAULT 0 COMMENT '顺序',
+  c_subject VARCHAR(255) DEFAULT NULL COMMENT '标题',
+  c_content TEXT DEFAULT NULL COMMENT '内容',
+  c_frequently INT DEFAULT 0 COMMENT '常见问题',
+
+  PRIMARY KEY pk(c_id) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

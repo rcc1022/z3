@@ -1,0 +1,67 @@
+{
+  "key": "clivia.notification",
+  "uri": "/notification/",
+  "props": [
+    {
+      "name": "user"
+    },
+    {
+      "name": "genre"
+    },
+    {
+      "name": "subject"
+    },
+    {
+      "name": "content"
+    },
+    {
+      "name": "expiration",
+      "type": "date-time"
+    },
+    {
+      "name": "time",
+      "type": "read-only"
+    },
+    {
+      "name": "read",
+      "type": "read-only"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "ops": [
+      {
+        "type": "modify"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create"
+      }
+    ]
+  },
+  "create": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  },
+  "modify": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  },
+  "user": {
+    "type": "grid"
+  }
+}

@@ -1,0 +1,48 @@
+{
+    "key": "clivia.user.online",
+    "uri": "/user/online/",
+    "props": [
+        {
+            "name": "user",
+            "type": "user"
+        },
+        {
+            "name": "user.register",
+            "label": "clivia.user.register"
+        },
+        {
+            "name": "grade",
+            "style": [
+                {
+                    "condition": "model.grade>=90",
+                    "value": {
+                        "color": "#f00"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "ip"
+        },
+        {
+            "name": "signIn"
+        },
+        {
+            "name": "lastVisit"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "uid"
+            }
+        ],
+        "ops": [
+            {
+                "service": "sign-out",
+                "reload": true
+            }
+        ]
+    }
+}

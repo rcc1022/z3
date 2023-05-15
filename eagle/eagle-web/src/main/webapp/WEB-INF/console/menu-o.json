@@ -1,0 +1,15 @@
+[
+  {
+    "label": "在线客服",
+    "items": [
+      {
+        "label": "常见问题",
+        "service": "/olcs/faq/query"
+      },
+      {
+        "label": "人工回复",
+        "service": "/olcs/query"
+      }
+    ]
+  }
+]

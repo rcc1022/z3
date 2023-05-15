@@ -1,0 +1,57 @@
+{
+    "key": "clivia.transfer",
+    "props": [
+        {
+            "name": "type"
+        },
+        {
+            "name": "appId"
+        },
+        {
+            "name": "user.code",
+            "label": "clivia.transfer.user"
+        },
+        {
+            "name": "amount"
+        },
+        {
+            "name": "orderNo"
+        },
+        {
+            "name": "billNo"
+        },
+        {
+            "name": "tradeNo"
+        },
+        {
+            "name": "state"
+        },
+        {
+            "name": "notice"
+        },
+        {
+            "name": "start"
+        },
+        {
+            "name": "end"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "when": {
+                    "state": 0
+                },
+                "label": "clivia.transfer.success",
+                "service": "success",
+                "success": "query"
+            },
+            {
+                "label": "clivia.transfer.notice",
+                "service": "notice",
+                "success": "query"
+            }
+        ]
+    }
+}

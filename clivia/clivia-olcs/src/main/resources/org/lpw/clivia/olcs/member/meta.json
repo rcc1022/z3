@@ -1,0 +1,30 @@
+{
+    "key": "clivia.olcs.member",
+    "uri": "/olcs/member/",
+    "props": [
+        {
+            "name": "content"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

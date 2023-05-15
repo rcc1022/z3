@@ -1,0 +1,248 @@
+{
+    "services": [{
+            "uri": "inviter",
+            "psid": true,
+            "parameters": [{
+                "name": "code",
+                "type": "string",
+                "require": true
+            }]
+        },
+        {
+            "uri": "sign-up-sms",
+            "psid": true,
+            "parameters": [{
+                "name": "mobile",
+                "type": "string",
+                "require": true
+            }]
+        },
+        {
+            "uri": "sign-up",
+            "psid": true,
+            "parameters": [{
+                    "name": "type",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "uid",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "sms",
+                    "type": "string"
+                },
+                {
+                    "name": "inviter",
+                    "type": "string"
+                },
+                {
+                    "name": "grade",
+                    "type": "string"
+                }
+            ],
+            "response": "model"
+        },
+        {
+            "uri": "sign-in",
+            "psid": true,
+            "parameters": [{
+                    "name": "type",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "uid",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "require": true
+                }
+            ],
+            "response": "model"
+        },
+        {
+            "uri": "sign-in-sms",
+            "psid": true,
+            "parameters": [{
+                "name": "mobile",
+                "type": "string",
+                "require": true
+            }]
+        },
+        {
+            "uri": "sign-in",
+            "name": "sms-sign-in",
+            "psid": true,
+            "parameters": [{
+                    "name": "type",
+                    "type": "string",
+                    "require": true,
+                    "description": ".type.sms"
+                },
+                {
+                    "name": "uid",
+                    "type": "string",
+                    "require": true,
+                    "description": "mobile"
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "require": true,
+                    "description": "sms"
+                }
+            ],
+            "response": "model"
+        },
+        {
+            "uri": "sign-in",
+            "name": "sid-sign-in",
+            "psid": true,
+            "parameters": [{
+                "name": "type",
+                "type": "string",
+                "require": true,
+                "description": ".type.sid"
+            }],
+            "response": "model"
+        },
+        {
+            "uri": "sign",
+            "psid": true,
+            "response": "model"
+        },
+        {
+            "page": "upload",
+            "name": ".avatar.upload",
+            "upload": "avatar",
+            "psid": true
+        },
+        {
+            "uri": "modify",
+            "psid": true,
+            "parameters": [{
+                    "name": "idcard",
+                    "type": "string"
+                },
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "nick",
+                    "type": "string"
+                },
+                {
+                    "name": "mobile",
+                    "type": "string"
+                },
+                {
+                    "name": "email",
+                    "type": "string"
+                },
+                {
+                    "name": "weixin",
+                    "type": "string"
+                },
+                {
+                    "name": "qq",
+                    "type": "string"
+                },
+                {
+                    "name": "avatar",
+                    "type": "string"
+                },
+                {
+                    "name": "gender",
+                    "type": "int"
+                },
+                {
+                    "name": "birthday",
+                    "type": "string"
+                }
+            ],
+            "response": "model"
+        },
+        {
+            "uri": "password",
+            "name": ".password.change",
+            "psid": true,
+            "parameters": [{
+                    "name": "old",
+                    "type": "string",
+                    "require": true,
+                    "description": ".password.old"
+                },
+                {
+                    "name": "new",
+                    "type": "string",
+                    "require": true,
+                    "description": ".password.new"
+                }
+            ]
+        },
+        {
+            "uri": "secret",
+            "name": ".secret.change",
+            "psid": true,
+            "parameters": [{
+                    "name": "old",
+                    "type": "string",
+                    "require": true,
+                    "description": ".password.old"
+                },
+                {
+                    "name": "new",
+                    "type": "string",
+                    "require": true,
+                    "description": ".password.new"
+                }
+            ]
+        },
+        {
+            "uri": "reset-password-sms",
+            "psid": true,
+            "parameters": [{
+                "name": "mobile",
+                "type": "string",
+                "require": true
+            }]
+        },
+        {
+            "uri": "sms-reset-password",
+            "psid": true,
+            "parameters": [{
+                    "name": "mobile",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "sms",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "require": true,
+                    "description": ".password.new"
+                }
+            ]
+        },
+        {
+            "uri": "sign-out",
+            "psid": true
+        }
+    ]
+}

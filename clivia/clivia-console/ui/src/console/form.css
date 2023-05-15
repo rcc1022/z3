@@ -1,0 +1,65 @@
+.console-form-item {
+    margin: 0;
+    padding: 8px 0;
+}
+
+.console-form-item-odd {
+    background-color: #f8f8f8;
+}
+
+.console-form-image {
+    max-width: 128px;
+    max-height: 96px;
+    cursor: pointer;
+}
+
+.console-form-file a {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.console-form-folder {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+.console-form-children {
+    border: 1px solid #91d5ff
+}
+
+.console-form-children-title {
+    padding: 8px 0;
+    background-color: #e6f7ff;
+    text-align: center;
+}
+
+.console-form-children-divider {
+    border-top: 1px solid #91d5ff;
+}
+
+.console-form-children-toolbar {
+    margin-top: -31px;
+    text-align: right;
+}
+
+.console-form-children-toolbar div {
+    display: inline-block;
+    border-left: 1px solid #91d5ff;
+    border-top: 1px solid #91d5ff;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.console-form-children-plus {
+    padding: 8px 0;
+    text-align: center;
+}
+
+.console-form-agreement label,
+.console-form-toolbar label {
+    display: none;
+}
+
+.console-form-toolbar button {
+    margin: 8px 4px 8px 0;
+}

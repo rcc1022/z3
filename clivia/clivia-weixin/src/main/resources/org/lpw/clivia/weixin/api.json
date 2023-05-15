@@ -1,0 +1,77 @@
+{
+    "services": [
+        {
+            "name": "clivia.user.sign-in",
+            "uri": "/user/sign-in",
+            "psid": true,
+            "parameters": [
+                {
+                    "name": "type",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "uid",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "iv",
+                    "type": "string"
+                },
+                {
+                    "name": "message",
+                    "type": "string"
+                }
+            ],
+            "response": ".sign-in.response"
+        },
+        {
+            "name": ".code.url",
+            "uri": "code",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "uri",
+                    "type": "string",
+                    "require": true,
+                    "description": ".code.url.uri"
+                },
+                {
+                    "name": "scope",
+                    "type": "string",
+                    "require": true,
+                    "description": ".code.url.scope"
+                }
+            ],
+            "response": ".code.url"
+        },
+        {
+            "name": ".auth",
+            "uri": "auth",
+            "parameters": [
+                {
+                    "name": "key",
+                    "type": "string",
+                    "require": true
+                },
+                {
+                    "name": "code",
+                    "type": "string",
+                    "require": true,
+                    "description": ".auth.code"
+                }
+            ],
+            "response": ".auth.response"
+        }
+    ]
+}

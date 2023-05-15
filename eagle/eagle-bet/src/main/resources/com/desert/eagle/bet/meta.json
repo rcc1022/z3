@@ -1,0 +1,323 @@
+{
+  "key": "eagle.bet",
+  "uri": "/bet/",
+  "props": [
+    {
+      "name": "uid"
+    },
+    {
+      "name": "player",
+      "type": "user"
+    },
+    {
+      "name": "game",
+      "type": "dselect",
+      "service": "/game/query"
+    },
+    {
+      "name": "issue"
+    },
+    {
+      "name": "time"
+    },
+    {
+      "name": "type"
+    },
+    {
+      "name": "item"
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "profit",
+      "type": "money",
+      "style": [
+        {
+          "condition": "model.profit>0",
+          "value": {
+            "color": "green"
+          }
+        },
+        {
+          "condition": "model.profit<0",
+          "value": {
+            "color": "red"
+          }
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "labels": "statuses"
+    },
+    {
+      "name": "open"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "info": "summary",
+    "search": [
+      {
+        "name": "game"
+      },
+      {
+        "name": "uid"
+      },
+      {
+        "name": "issue"
+      },
+      {
+        "name": "win",
+        "labels": "wins"
+      },
+      {
+        "name": "time",
+        "type": "date-range"
+      }
+    ],
+    "interval": 5
+  },
+  "game": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "issue"
+      },
+      {
+        "name": "win",
+        "labels": "wins"
+      }
+    ]
+  },
+  "sum1": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "times",
+        "type": "date-range",
+        "time": true
+      },
+      {
+        "name": "uid"
+      },
+      {
+        "name": "nick"
+      },
+      {
+        "name": "game"
+      }
+    ],
+    "props": [
+      {
+        "name": "uid"
+      },
+      {
+        "name": "player",
+        "type": "user"
+      },
+      {
+        "name": "issues"
+      },
+      {
+        "name": "amounts",
+        "type": "money"
+      },
+      {
+        "name": "profits",
+        "type": "money",
+        "style": [
+          {
+            "condition": "model.profist>0",
+            "value": {
+              "color": "green"
+            }
+          },
+          {
+            "condition": "model.profits<0",
+            "value": {
+              "color": "red"
+            }
+          }
+        ]
+      },
+      {
+        "name": "gains",
+        "type": "money",
+        "style": [
+          {
+            "condition": "model.gains>0",
+            "value": {
+              "color": "green"
+            }
+          },
+          {
+            "condition": "model.gains<0",
+            "value": {
+              "color": "red"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sum2": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "times",
+        "type": "date-range",
+        "time": true
+      },
+      {
+        "name": "uid"
+      },
+      {
+        "name": "nick"
+      },
+      {
+        "name": "game"
+      },
+      {
+        "name": "timeType",
+        "labels": "timeTypes"
+      },
+      {
+        "name": "invitor"
+      }
+    ],
+    "props": [
+      {
+        "name": "uid",
+        "sort": true
+      },
+      {
+        "name": "player",
+        "type": "user"
+      },
+      {
+        "name": "invitor",
+        "sort": true
+      },
+      {
+        "name": "amounts",
+        "type": "money",
+        "sort": true
+      },
+      {
+        "name": "profits",
+        "type": "money",
+        "sort": true,
+        "style": [
+          {
+            "condition": "model.profits>0",
+            "value": {
+              "color": "green"
+            }
+          },
+          {
+            "condition": "model.profits<0",
+            "value": {
+              "color": "red"
+            }
+          }
+        ]
+      },
+      {
+        "name": "gains",
+        "type": "money",
+        "sort": true,
+        "style": [
+          {
+            "condition": "model.gains>0",
+            "value": {
+              "color": "green"
+            }
+          },
+          {
+            "condition": "model.gains<0",
+            "value": {
+              "color": "red"
+            }
+          }
+        ]
+      },
+      {
+        "name": "deposits",
+        "type": "money",
+        "sort": true
+      },
+      {
+        "name": "signs",
+        "type": "money",
+        "sort": true
+      },
+      {
+        "name": "withdraws",
+        "sort": true
+      },
+      {
+        "name": "commissions",
+        "type": "money",
+        "sort": true
+      },
+      {
+        "name": "waters",
+        "label": "waters0",
+        "type": "money",
+        "sort": true
+      },
+      {
+        "name": "waters0",
+        "label": "waters1",
+        "type": "money",
+        "sort": true
+      }
+    ]
+  },
+  "unsettle": {
+    "type": "form",
+    "props": [
+      {
+        "name": "game"
+      },
+      {
+        "name": "issue"
+      }
+    ],
+    "toolbar": [
+      {
+        "service": "clear"
+      }
+    ]
+  },
+  "immediately": {
+    "type": "grid",
+    "props": [
+      {
+        "name": "game"
+      },
+      {
+        "name": "issue"
+      },
+      {
+        "name": "open"
+      },
+      {
+        "name": "list"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "query",
+        "success": "immediately",
+        "service": "immediately"
+      }
+    ]
+  }
+}

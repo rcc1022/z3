@@ -1,0 +1,253 @@
+{
+  "key": "eagle.domain",
+  "uri": "/domain/",
+  "props": [
+    {
+      "name": "name"
+    },
+    {
+      "name": "status",
+      "type": "switch",
+      "service": "status"
+    },
+    {
+      "name": "create"
+    },
+    {
+      "name": "modify"
+    }
+  ],
+  "query0": {
+    "type": "grid",
+    "ops": [
+      {
+        "type": "modify",
+        "label": "clivia.console.op.modify",
+        "service": "modify0"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create",
+        "label": "clivia.console.op.create",
+        "service": "create0"
+      }
+    ]
+  },
+  "create0": {
+    "type": "form",
+    "props": [
+      {
+        "name": "names"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "service": "creates",
+        "success": "query0"
+      }
+    ]
+  },
+  "modify0": {
+    "type": "form",
+    "props": [
+      {
+        "name": "name"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query0"
+      }
+    ]
+  },
+  "query1": {
+    "type": "grid",
+    "ops": [
+      {
+        "type": "modify",
+        "label": "clivia.console.op.modify",
+        "service": "modify1"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create",
+        "label": "clivia.console.op.create",
+        "service": "create1"
+      }
+    ]
+  },
+  "create1": {
+    "type": "form",
+    "props": [
+      {
+        "name": "names"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "service": "creates",
+        "success": "query1"
+      }
+    ]
+  },
+  "modify1": {
+    "type": "form",
+    "props": [
+      {
+        "name": "name"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query1"
+      }
+    ]
+  },
+  "query2": {
+    "type": "grid",
+    "ops": [
+      {
+        "type": "modify",
+        "label": "clivia.console.op.modify",
+        "service": "modify2"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create",
+        "label": "clivia.console.op.create",
+        "service": "create2"
+      }
+    ]
+  },
+  "create2": {
+    "type": "form",
+    "props": [
+      {
+        "name": "names"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "service": "creates",
+        "success": "query2"
+      }
+    ]
+  },
+  "modify2": {
+    "type": "form",
+    "props": [
+      {
+        "name": "name"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query2"
+      }
+    ]
+  },
+  "query3": {
+    "type": "grid",
+    "ops": [
+      {
+        "type": "modify",
+        "label": "clivia.console.op.modify",
+        "service": "modify3"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create",
+        "label": "clivia.console.op.create",
+        "service": "create3"
+      }
+    ]
+  },
+  "create3": {
+    "type": "form",
+    "props": [
+      {
+        "name": "names"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "service": "creates",
+        "success": "query3"
+      }
+    ]
+  },
+  "modify3": {
+    "type": "form",
+    "props": [
+      {
+        "name": "name"
+      },
+      {
+        "name": "status"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query3"
+      }
+    ]
+  },
+  "entrance": {
+    "type": "form",
+    "props": [
+      {
+        "name": "qrcode",
+        "type": "image-viewer"
+      },
+      {
+        "name": "url",
+        "type": "read-only"
+      }
+    ]
+  }
+}

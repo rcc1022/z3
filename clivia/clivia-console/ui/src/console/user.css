@@ -1,0 +1,14 @@
+.user .user-avatar,
+.user .user-info,
+.user .user-info>* {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.user .user-avatar {
+    padding-right: 8px;
+}
+
+.user .user-memo {
+    color: #1890ff;
+}

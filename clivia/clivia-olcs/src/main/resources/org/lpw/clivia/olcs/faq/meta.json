@@ -1,0 +1,59 @@
+{
+  "key": "clivia.olcs.faq",
+  "uri": "/olcs/faq/",
+  "props": [
+    {
+      "name": "sort"
+    },
+    {
+      "name": "subject"
+    },
+    {
+      "name": "content",
+      "type": "text-area"
+    },
+    {
+      "name": "frequently",
+      "labels": "frequentlies"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "frequently"
+      }
+    ],
+    "ops": [
+      {
+        "type": "modify"
+      },
+      {
+        "type": "delete"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "create"
+      }
+    ]
+  },
+  "create": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  },
+  "modify": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  }
+}

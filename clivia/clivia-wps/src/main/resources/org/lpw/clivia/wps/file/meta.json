@@ -1,0 +1,70 @@
+{
+    "key": "clivia.wps.file",
+    "uri": "/wps/file/",
+    "props": [
+        {
+            "name": "wps"
+        },
+        {
+            "name": "uri"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "permission"
+        },
+        {
+            "name": "version"
+        },
+        {
+            "name": "size"
+        },
+        {
+            "name": "creator"
+        },
+        {
+            "name": "create"
+        },
+        {
+            "name": "modifier"
+        },
+        {
+            "name": "modify"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

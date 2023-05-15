@@ -1,0 +1,15 @@
+{
+    "key": "eagle.player.brokerage",
+    "uri": "/player/brokerage/",
+    "props": [
+        {
+            "name": "player"
+        },
+        {
+            "name": "date"
+        },
+        {
+            "name": "amount"
+        }
+    ]
+}

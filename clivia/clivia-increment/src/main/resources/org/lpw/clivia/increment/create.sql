@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS t_increment;
+CREATE TABLE t_increment
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_key VARCHAR(255) NOT NULL COMMENT 'KEY',
+  c_value INT DEFAULT 0 COMMENT '值',
+
+  PRIMARY KEY pk(c_id) USING HASH,
+  UNIQUE KEY uk_key(c_key) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

@@ -1,0 +1,27 @@
+[
+  {
+    "interval": 5,
+    "service": "/daily/today",
+    "parameter": {
+      "shortcut": true
+    },
+    "name": "shortcut",
+    "load": "/daily/query"
+  },
+  {
+    "interval": 5,
+    "service": "/player/deposit/newer",
+    "icon": "../icon/arrowup.png",
+    "badge": "count",
+    "ringtone": "../audio/sf.mp3",
+    "load": "/player/deposit/query"
+  },
+  {
+    "interval": 5,
+    "service": "/player/withdraw/newer",
+    "icon": "../icon/arrowdown.png",
+    "badge": "count",
+    "ringtone": "../audio/xf.mp3",
+    "load": "/player/withdraw/query"
+  }
+]

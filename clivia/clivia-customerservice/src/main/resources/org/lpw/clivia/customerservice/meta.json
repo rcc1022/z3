@@ -1,0 +1,62 @@
+{
+    "key": "clivia.customerservice",
+    "uri": "/customerservice/",
+    "props": [
+        {
+            "name": "type"
+        },
+        {
+            "name": "account"
+        },
+        {
+            "name": "nick"
+        },
+        {
+            "name": "qrcode",
+            "type": "image"
+        },
+        {
+            "name": "memo",
+            "type": "text-area"
+        },
+        {
+            "name": "state",
+            "type": "switch",
+            "service": "state"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

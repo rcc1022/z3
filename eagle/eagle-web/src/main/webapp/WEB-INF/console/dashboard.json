@@ -1,0 +1,22 @@
+[
+  {
+    "span": 24,
+    "cards": [
+      {
+        "title": "今日用户",
+        "reload": true,
+        "service": "/user/stat/today"
+      },
+      {
+        "title": "今日报表",
+        "reload": true,
+        "service": "/daily/today"
+      },
+      {
+        "title": "七日报表",
+        "reload": true,
+        "service": "/daily/day7"
+      }
+    ]
+  }
+]

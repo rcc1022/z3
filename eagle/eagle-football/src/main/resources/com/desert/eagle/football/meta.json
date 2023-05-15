@@ -1,0 +1,216 @@
+{
+    "key": "eagle.football",
+    "uri": "/football/",
+    "props": [
+        {
+            "name": "group",
+            "labels": "groups"
+        },
+        {
+            "name": "gid"
+        },
+        {
+            "name": "sort"
+        },
+        {
+            "name": "league"
+        },
+        {
+            "name": "teamH"
+        },
+        {
+            "name": "teamC"
+        },
+        {
+            "name": "scoreH"
+        },
+        {
+            "name": "scoreC"
+        },
+        {
+            "name": "scoreShangH"
+        },
+        {
+            "name": "scoreShangC"
+        },
+        {
+            "name": "rangQiu"
+        },
+        {
+            "name": "rangQiuH"
+        },
+        {
+            "name": "rangQiuC"
+        },
+        {
+            "name": "rangQiuShang"
+        },
+        {
+            "name": "rangQiuShangH"
+        },
+        {
+            "name": "rangQiuShangC"
+        },
+        {
+            "name": "rangQiuShangHe"
+        },
+        {
+            "name": "deFenH"
+        },
+        {
+            "name": "deFenC"
+        },
+        {
+            "name": "deFenRateH"
+        },
+        {
+            "name": "deFenRateC"
+        },
+        {
+            "name": "deFenShangH"
+        },
+        {
+            "name": "deFenShangC"
+        },
+        {
+            "name": "deFenRateShangH"
+        },
+        {
+            "name": "deFenRateShangC"
+        },
+        {
+            "name": "duYing"
+        },
+        {
+            "name": "duYingH"
+        },
+        {
+            "name": "duYingC"
+        },
+        {
+            "name": "duYingHe"
+        },
+        {
+            "name": "duYingShang"
+        },
+        {
+            "name": "duYingShangH"
+        },
+        {
+            "name": "duYingShangC"
+        },
+        {
+            "name": "duYingShangHe"
+        },
+        {
+            "name": "datetime"
+        },
+        {
+            "name": "timer"
+        },
+        {
+            "name": "on",
+            "type": "switch",
+            "service": "on"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "props": [
+            {
+                "name": "group"
+            },
+            {
+                "name": "sort"
+            },
+            {
+                "name": "league"
+            },
+            {
+                "name": "teamH"
+            },
+            {
+                "name": "teamC"
+            },
+            {
+                "name": "scoreH"
+            },
+            {
+                "name": "scoreC"
+            },
+            {
+                "name": "scoreShangH"
+            },
+            {
+                "name": "scoreShangC"
+            },
+            {
+                "name": "datetime"
+            },
+            {
+                "name": "on"
+            }
+        ],
+        "search": [
+            {
+                "name": "group"
+            },
+            {
+                "name": "league"
+            },
+            {
+                "name": "teamH"
+            },
+            {
+                "name": "teamC"
+            }
+        ],
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            },
+            {
+                "label": "ons",
+                "service": "all",
+                "parameter": {
+                    "on": 1
+                },
+                "reload": true
+            },
+            {
+                "label": "offs",
+                "service": "all",
+                "parameter": {
+                    "on": 0
+                },
+                "reload": true
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

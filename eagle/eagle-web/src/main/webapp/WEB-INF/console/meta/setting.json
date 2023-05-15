@@ -1,0 +1,253 @@
+{
+  "key": "setting",
+  "uri": "/setting/",
+  "global": {
+    "props": [
+      {
+        "name": "setting.global.console.title"
+      },
+      {
+        "name": "setting.global.console.logo",
+        "type": "image",
+        "upload": "clivia.keyvalue.image"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "user": {
+    "props": [
+      {
+        "name": "setting.user.sign-up.enable",
+        "type": "switch",
+        "permit": true
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "home": {
+    "props": [
+      {
+        "name": "setting.home.title"
+      },
+      {
+        "name": "setting.home.tan-chu-gong-gao",
+        "type": "text-area"
+      },
+      {
+        "name": "setting.home.lun-bo",
+        "type": "image",
+        "upload": "eagle.home.image",
+        "size": "64"
+      },
+      {
+        "name": "setting.home.gun-don-gong-gao"
+      },
+      {
+        "name": "setting.home.ke-fu.online",
+        "type": "image",
+        "upload": "eagle.home.image"
+      },
+      {
+        "name": "setting.home.ke-fu.qq",
+        "type": "image",
+        "upload": "eagle.home.image",
+        "size": "64"
+      },
+      {
+        "name": "setting.home.ke-fu.wechat",
+        "type": "image",
+        "upload": "eagle.home.image",
+        "size": "64"
+      },
+      {
+        "name": "setting.home.illegal"
+      },
+      {
+        "name": "setting.home.qrcode-logo",
+        "type": "image",
+        "upload": "eagle.home.image"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "weixin": {
+    "props": [
+      {
+        "name": "setting.weixin.domain"
+      },
+      {
+        "name": "setting.weixin.file",
+        "type": "file",
+        "upload": "eagle.home.file"
+      },
+      {
+        "name": "setting.weixin.appid"
+      },
+      {
+        "name": "setting.weixin.secret"
+      },
+      {
+        "name": "setting.weixin.auth",
+        "labels": "setting.weixin.authes"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "deposit": {
+    "props": [
+      {
+        "name": "setting.deposit.alipay",
+        "type": "image",
+        "upload": "eagle.home.image",
+        "size": "64"
+      },
+      {
+        "name": "setting.deposit.weixin",
+        "type": "image",
+        "upload": "eagle.home.image",
+        "size": "64"
+      },
+      {
+        "name": "setting.deposit.min"
+      },
+      {
+        "name": "setting.deposit.max"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "withdraw": {
+    "props": [
+      {
+        "name": "setting.withdraw.count"
+      },
+      {
+        "name": "setting.withdraw.min"
+      },
+      {
+        "name": "setting.withdraw.max"
+      },
+      {
+        "name": "setting.withdraw.time",
+        "type": "time-range"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "synch": {
+    "props": [
+      {
+        "name": "setting.synch.jndpc"
+      },
+      {
+        "name": "setting.synch.sc"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "data": {
+    "props": [
+      {
+        "name": "setting.data.overdue"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "control": {
+    "props": [
+      {
+        "name": "setting.control.pc",
+        "labels": "setting.control.type"
+      },
+      {
+        "name": "setting.control.sc",
+        "labels": "setting.control.type"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "robot": {
+    "props": [
+      {
+        "name": "setting.robot.min"
+      },
+      {
+        "name": "setting.robot.max"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  },
+  "splash": {
+    "props": [
+      {
+        "name": "setting.splash.image",
+        "type": "image",
+        "upload": "eagle.home.image"
+      },
+      {
+        "name": "setting.splash.wei-xin",
+        "type": "switch",
+        "permit": true
+      },
+      {
+        "name": "setting.splash.illegal"
+      }
+    ],
+    "toolbar": [
+      {
+        "label": "save",
+        "service": "/keyvalue/saves"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+    "key": "eagle.robot",
+    "uri": "/robot/",
+    "props": [
+        {
+            "name": "nick"
+        },
+        {
+            "name": "avatar",
+            "type": "image"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            },
+            {
+                "label": "allot",
+                "service": "allot",
+                "reload": true
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "key": "setting",
+    "uri": "/setting/",
+    "global": {
+        "props": [
+            {
+                "name": "setting.global.console.title"
+            },
+            {
+                "name": "setting.global.console.logo",
+                "type": "image",
+                "upload": "clivia.keyvalue.image"
+            },
+            {
+                "name": "setting.global.sms.captcha"
+            }
+        ],
+        "toolbar": [
+            {
+                "label": "save",
+                "service": "/keyvalue/saves"
+            }
+        ]
+    },
+    "user": {
+        "props": [
+            {
+                "name": "setting.user.sign-up.enable",
+                "type": "switch",
+                "permit": true
+            },
+            {
+                "name": "setting.user.sign-up.sms",
+                "type": "switch",
+                "permit": true
+            },
+            {
+                "name": "setting.user.sign-up.sid",
+                "type": "switch",
+                "permit": true
+            },
+            {
+                "name": "setting.user.sign-up.invite-code",
+                "type": "switch",
+                "permit": true
+            }
+        ],
+        "toolbar": [
+            {
+                "label": "save",
+                "service": "/keyvalue/saves"
+            }
+        ]
+    },
+    "agreement": {
+        "props": [
+            {
+                "name": "setting.agreement.privacy",
+                "type": "file",
+                "upload": "clivia.keyvalue.file"
+            }
+        ],
+        "toolbar": [
+            {
+                "label": "save",
+                "service": "/keyvalue/saves"
+            }
+        ]
+    },
+    "slider-captcha": {
+        "props": [
+            {
+                "name": "setting.slider-captcha.image",
+                "type": "image",
+                "upload": "clivia.keyvalue.image",
+                "size": 16
+            },
+            {
+                "name": "setting.slider-captcha.sign-up",
+                "type": "switch",
+                "permit": true
+            },
+            {
+                "name": "setting.slider-captcha.sign-in",
+                "type": "switch",
+                "permit": true
+            }
+        ],
+        "toolbar": [
+            {
+                "label": "save",
+                "service": "/keyvalue/saves"
+            }
+        ]
+    },
+    "chat": {
+        "props": [
+            {
+                "name": "setting.chat.overdue"
+            }
+        ],
+        "toolbar": [
+            {
+                "label": "save",
+                "service": "/keyvalue/saves"
+            }
+        ]
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "key": "clivia.chrome",
+    "props": [
+        {
+            "name": "key"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "x",
+            "format": "number"
+        },
+        {
+            "name": "y",
+            "format": "number"
+        },
+        {
+            "name": "width",
+            "format": "number"
+        },
+        {
+            "name": "height",
+            "format": "number"
+        },
+        {
+            "name": "pages"
+        },
+        {
+            "name": "wait",
+            "format": "number"
+        },
+        {
+            "name": "filename"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "search": [
+            {
+                "name": "key"
+            },
+            {
+                "name": "name"
+            }
+        ],
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete",
+                "service": "delete",
+                "success": "query"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": "save",
+                "success": "query",
+                "data": "true"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "service": "save",
+                "success": "query",
+                "data": "true"
+            }
+        ]
+    }
+}

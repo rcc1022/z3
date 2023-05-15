@@ -1,0 +1,148 @@
+[
+  {
+    "label": "主面板",
+    "service": "/console/dashboard"
+  },
+  {
+    "category": "menu"
+  },
+  {
+    "label": "页面",
+    "items": [
+      {
+        "label": "自定义",
+        "page": "custom",
+        "parameter": {
+          "name": "value"
+        }
+      }
+    ]
+  },
+  {
+    "label": "客服",
+    "items": [
+      {
+        "label": "常见问题",
+        "service": "/olcs/faq/query"
+      },
+      {
+        "label": "人工",
+        "service": "/olcs/query"
+      }
+    ]
+  },
+  {
+    "label": "配置",
+    "items": [
+      {
+        "label": "键值",
+        "service": "/keyvalue/query"
+      },
+      {
+        "label": "分类",
+        "service": "/category/query",
+        "parameter": {
+          "key": "category"
+        }
+      },
+      {
+        "label": "FAQ",
+        "service": "/category/faq-query",
+        "parameter": {
+          "key": "faq"
+        }
+      },
+      {
+        "label": "字典",
+        "service": "/dict/query",
+        "parameter": {
+          "key": "dict"
+        }
+      },
+      {
+        "label": "菜单",
+        "service": "/category/query",
+        "parameter": {
+          "key": "menu"
+        }
+      },
+      {
+        "label": "短信",
+        "service": "/sms/query"
+      },
+      {
+        "label": "滑动认证",
+        "service": "/setting/slider-captcha"
+      },
+      {
+        "label": "协议",
+        "service": "/setting/agreement"
+      },
+      {
+        "label": "更新",
+        "service": "/upgrader/query"
+      },
+      {
+        "label": "推送",
+        "service": "/push/query"
+      },
+      {
+        "label": "邀请码",
+        "service": "/user/invitecode/query"
+      }
+    ]
+  },
+  {
+    "label": "开发",
+    "items": [
+      {
+        "label": "模块",
+        "service": "/module/query"
+      }
+    ]
+  },
+  {
+    "label": "系统",
+    "items": [
+      {
+        "label": "全局设置",
+        "service": "/setting/global"
+      },
+      {
+        "label": "用户设置",
+        "service": "/setting/user"
+      },
+      {
+        "label": "普通用户",
+        "service": "/user/query",
+        "parameter": {
+          "maxGrade": 49
+        }
+      },
+      {
+        "label": "管理员",
+        "service": "/user/query",
+        "parameter": {
+          "minGrade": 90,
+          "maxGrade": 98
+        }
+      },
+      {
+        "label": "权限设置",
+        "service": "/user/crosier/query"
+      },
+      {
+        "label": "在线用户",
+        "service": "/user/online/query"
+      },
+      {
+        "label": "用户统计",
+        "service": "/user/stat/query"
+      },
+      {
+        "label": "异常登录",
+        "service": "/user/illegal/query"
+      }
+    ]
+  }
+]

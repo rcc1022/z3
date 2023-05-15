@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WeChat Auth</title>
+</head>
+
+<body>
+</body>
+<script type="text/javascript">
+    function ready() {
+        let search = location.search;
+        if (!search || search.indexOf('?') == -1)
+            return;
+
+        let param = {};
+        for (let str of search.substring(1).split('&')) {
+            let array = str.split('=');
+            if (array && array.length === 2)
+                param[array[0]] = decodeURIComponent(array[1]);
+        }
+
+        if (param.code) {
+            auth(param);
+        } else {
+            code(param);
+        }
+    }
+
+    function auth(param) {
+        location.href = localStorage.getItem('to') + '?photon-session-id=' + localStorage.getItem('sid') + '&code=' + param.code;
+    }
+
+    function code(param) {
+        localStorage.setItem('to', decodeURIComponent(param.to));
+        localStorage.setItem('sid', param.sid);
+        location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=' + param.appid
+            + '&redirect_uri=' + encodeURIComponent('http://' + location.host)
+            + '&response_type=code&scope=snsapi_userinfo#wechat_redirect';
+    }
+
+    ready();
+</script>
+
+</html>

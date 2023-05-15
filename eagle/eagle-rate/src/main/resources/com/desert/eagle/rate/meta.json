@@ -1,0 +1,88 @@
+{
+  "key": "eagle.rate",
+  "uri": "/rate/",
+  "props": [
+    {
+      "name": "game",
+      "type": "dselect",
+      "service": "/game/query"
+    },
+    {
+      "name": "type"
+    },
+    {
+      "name": "sort"
+    },
+    {
+      "name": "name"
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "max"
+    },
+    {
+      "name": "memo"
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "game"
+      },
+      {
+        "name": "type"
+      }
+    ],
+    "ops": [
+      {
+        "type": "modify"
+      }
+    ],
+    "toolbar": [
+      {
+        "service": "reset",
+        "search": true
+      },
+      {
+        "type": "create",
+        "service": "sai-che"
+      }
+    ]
+  },
+  "modify": {
+    "type": "form",
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  },
+  "sai-che": {
+    "type": "form",
+    "props": [
+      {
+        "name": "game"
+      },
+      {
+        "name": "haoMa",
+        "type": "money"
+      },
+      {
+        "name": "shuangMian",
+        "type": "money"
+      }
+    ],
+    "toolbar": [
+      {
+        "service": "sai-che",
+        "label": ".sai-che.set",
+        "success": "query"
+      }
+    ]
+  }
+}

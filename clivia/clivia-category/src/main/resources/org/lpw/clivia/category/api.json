@@ -1,0 +1,10 @@
+{
+    "services": [{
+        "uri": "list",
+        "parameters": [{
+            "name": "key",
+            "type": "string",
+            "require": true
+        }]
+    }]
+}

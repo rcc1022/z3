@@ -1,0 +1,114 @@
+{
+  "key": "eagle.player.deposit",
+  "uri": "/player/deposit/",
+  "props": [
+    {
+      "name": "uid"
+    },
+    {
+      "name": "player",
+      "type": "user"
+    },
+    {
+      "name": "amount",
+      "type": "money"
+    },
+    {
+      "name": "type"
+    },
+    {
+      "name": "submit"
+    },
+    {
+      "name": "audit"
+    },
+    {
+      "name": "auditor",
+      "type": "user"
+    },
+    {
+      "name": "status",
+      "labels": "statuses",
+      "style": [
+        {
+          "condition": "model.status==1",
+          "value": {
+            "color": "green"
+          }
+        },
+        {
+          "condition": "model.status==2",
+          "value": {
+            "color": "red"
+          }
+        }
+      ]
+    }
+  ],
+  "query": {
+    "type": "grid",
+    "search": [
+      {
+        "name": "time",
+        "type": "date-range"
+      },
+      {
+        "name": "uid"
+      },
+      {
+        "name": "nick"
+      },
+      {
+        "name": "status"
+      },
+      {
+        "name": "timeN",
+        "labels": "timeNs"
+      }
+    ],
+    "ops": [
+      {
+        "type": "modify",
+        "when": "model.status>0"
+      },
+      {
+        "service": "pass",
+        "search": true,
+        "when": "model.status==0",
+        "style": {
+          "color": "green"
+        }
+      },
+      {
+        "service": "reject",
+        "search": true,
+        "when": "model.status==0",
+        "style": {
+          "color": "red"
+        }
+      },
+      {
+        "service": "/player/ledger/player-id",
+        "label": "eagle.player.ledger"
+      }
+    ]
+  },
+  "modify": {
+    "type": "form",
+    "props": [
+      {
+        "name": "uid",
+        "type": "read-only"
+      },
+      {
+        "name": "amount2"
+      }
+    ],
+    "toolbar": [
+      {
+        "type": "save",
+        "success": "query"
+      }
+    ]
+  }
+}

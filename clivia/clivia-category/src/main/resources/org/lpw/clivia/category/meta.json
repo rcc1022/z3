@@ -1,0 +1,152 @@
+{
+    "key": "clivia.category",
+    "uri": "/category/",
+    "props": [
+        {
+            "name": "sort"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "value"
+        },
+        {
+            "name": "image",
+            "type": "image"
+        },
+        {
+            "name": "pointTo",
+            "type": "category"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "props": [
+            {
+                "name": "sort"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "value"
+            },
+            {
+                "name": "image"
+            },
+            {
+                "name": "child"
+            },
+            {
+                "name": "pointToPath"
+            }
+        ],
+        "ops": [
+            {
+                "type": "create"
+            },
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete",
+                "when": "!model.children||model.children.length===0"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "faq-query": {
+        "type": "grid",
+        "props": [
+            {
+                "name": "sort"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "value"
+            }
+        ],
+        "ops": [
+            {
+                "type": "modify",
+                "service": "faq-modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create",
+                "service": "faq-create"
+            }
+        ]
+    },
+    "faq-create": {
+        "type": "form",
+        "props": [
+            {
+                "name": "sort"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "value",
+                "type": "text-area"
+            }
+        ],
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "faq-query"
+            }
+        ]
+    },
+    "faq-modify": {
+        "type": "form",
+        "props": [
+            {
+                "name": "sort"
+            },
+            {
+                "name": "name"
+            },
+            {
+                "name": "value",
+                "type": "text-area"
+            }
+        ],
+        "toolbar": [
+            {
+                "service": "save",
+                "success": "faq-query"
+            }
+        ]
+    }
+}

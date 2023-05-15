@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS t_customerservice;
+CREATE TABLE t_customerservice
+(
+  c_id CHAR(36) NOT NULL COMMENT '主键',
+  c_type VARCHAR(255) DEFAULT NULL COMMENT '类型',
+  c_account VARCHAR(255) DEFAULT NULL COMMENT '账号',
+  c_nick VARCHAR(255) DEFAULT NULL COMMENT '昵称',
+  c_qrcode VARCHAR(255) DEFAULT NULL COMMENT '二维码',
+  c_memo TEXT DEFAULT NULL COMMENT '备注',
+  c_state INT DEFAULT 0 COMMENT '状态：0-停用；1-可用',
+
+  PRIMARY KEY pk(c_id) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

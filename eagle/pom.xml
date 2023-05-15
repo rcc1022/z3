@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.desert.eagle</groupId>
+    <artifactId>eagle</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+    <name>eagle</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <modules>
+        <module>eagle-base</module>
+        <module>eagle-player</module>
+        <module>eagle-game</module>
+        <module>eagle-home</module>
+        <module>eagle-sync</module>
+        <module>eagle-pcnum</module>
+        <module>eagle-football</module>
+        <module>eagle-bet</module>
+        <module>eagle-message</module>
+        <module>eagle-scnum</module>
+        <module>eagle-robot</module>
+        <module>eagle-daily</module>
+        <module>eagle-rate</module>
+        <module>eagle-control</module>
+        <module>eagle-channel</module>
+        <module>eagle-domain</module>
+        <module>eagle-wunum</module>
+        <module>eagle-web</module>
+    </modules>
+</project>

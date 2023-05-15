@@ -1,0 +1,64 @@
+{
+    "key": "clivia.user.upload",
+    "uri": "/user/upload/",
+    "props": [
+        {
+            "name": "user"
+        },
+        {
+            "name": "name"
+        },
+        {
+            "name": "contentType"
+        },
+        {
+            "name": "filename"
+        },
+        {
+            "name": "uri"
+        },
+        {
+            "name": "length"
+        },
+        {
+            "name": "time"
+        }
+    ],
+    "query": {
+        "type": "grid",
+        "ops": [
+            {
+                "type": "modify"
+            },
+            {
+                "type": "delete"
+            }
+        ],
+        "toolbar": [
+            {
+                "type": "create"
+            }
+        ]
+    },
+    "create": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "modify": {
+        "type": "form",
+        "toolbar": [
+            {
+                "type": "save",
+                "success": "query"
+            }
+        ]
+    },
+    "user": {
+        "type": "grid"
+    }
+}
