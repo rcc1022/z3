@@ -6,6 +6,18 @@
     <groupId>org.lpw.photon</groupId>
     <artifactId>photon-lucene</artifactId>
     <version>1.0</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <name>photon-lucene</name>
     <url>https://github.com/heisedebaise/photon</url>
