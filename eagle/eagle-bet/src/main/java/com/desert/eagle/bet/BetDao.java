@@ -14,7 +14,7 @@ interface BetDao {
     long sumAmount(int status, int robot, Map<String, String> map);
 
     PageList<BetModel> query(String game, String issue, int status);
-    List<BetModel> queryUserBetList(String game, String issue);
+    PageList<BetModel> queryUserBetList(String game, String issue);
 
     PageList<BetModel> query(String issue, int status, int robot);
 

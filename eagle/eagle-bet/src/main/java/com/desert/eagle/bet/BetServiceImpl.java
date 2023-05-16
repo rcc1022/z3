@@ -163,7 +163,7 @@ public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener
                 long open = latest.getLongValue("open");
                 jsonObject.put("open", secToTime(open));
                 //查询对应游戏下的用户下单记录，倒排
-                List<BetModel> bets = betDao.queryUserBetList(game.getId(), issue + "");
+                List<BetModel> bets = betDao.queryUserBetList(game.getId(), issue + "").getList();
                 if (bets.size() == 0) {
                     return;
                 }
