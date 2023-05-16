@@ -158,7 +158,8 @@ public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener
             long issue = latest.getLongValue("issue");
             if (ObjectUtils.isNotEmpty(issue)) {
                 jsonObject.put("issue", issue + "期");
-                jsonObject.put("open", latest.getLongValue("open"));
+                long open = latest.getLongValue("open");
+                jsonObject.put("open", secToTime(open));
                 //查询对应游戏下的用户下单记录，倒排
                 JSONArray jsonArray = modelHelper.toJson(betDao.queryOrderDesc(game.getId(), issue + "", 0).getList());
                 jsonObject.put("list", jsonArray.toJSONString());
@@ -167,6 +168,31 @@ public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener
         });
         return rArray.toJSONString();
     }
+
+    public static String secToTime(long seconds) {
+        if (0 == seconds) {
+            return "0";
+        }
+        long hour = seconds / 3600;
+        long minute = (seconds - hour * 3600) / 60;
+        long second = (seconds - hour * 3600 - minute * 60);
+
+        StringBuffer sb = new StringBuffer();
+        if (hour > 0) {
+            sb.append(hour + "小时");
+        }
+        if (minute > 0) {
+            sb.append(minute + "分");
+        }
+        if (second > 0) {
+            sb.append(second + "秒");
+        }
+        if (second == 0) {
+            sb.append("<1秒");
+        }
+        return sb.toString();
+    }
+
 
     @Override
     public JSONObject user(String game, String time) {
