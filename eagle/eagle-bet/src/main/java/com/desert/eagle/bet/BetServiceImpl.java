@@ -1,5 +1,6 @@
 package com.desert.eagle.bet;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -48,6 +49,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 @Service(BetModel.NAME + ".service")
 public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener, WunumListener, FootballListener, OverdueListener, HourJob {
@@ -161,8 +163,28 @@ public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener
                 long open = latest.getLongValue("open");
                 jsonObject.put("open", secToTime(open));
                 //查询对应游戏下的用户下单记录，倒排
-                JSONArray jsonArray = modelHelper.toJson(betDao.queryOrderDesc(game.getId(), issue + "", 0).getList());
-                jsonObject.put("list", jsonArray.toJSONString());
+                betDao.queryUserBetList(game.getId(), issue + "").forEach(bets -> {
+                    if (bets.size() == 0) {
+                        return;
+                    }
+                    Map<String, List<BetModel>> userBetMap = (Map<String, List<BetModel>>) Optional.ofNullable(bets).orElse(Collections.emptyList()).stream().collect(Collectors.groupingBy(BetModel::getType));
+
+                    List<UserBetModel> userBetModels = new ArrayList<>();
+                    userBetMap.forEach((key, value) -> {
+                        UserBetModel userBetModel = new UserBetModel();
+                        userBetModel.setType(key);
+                        List<UserBetModel.UserBets> userBetsList = value.stream().map(x -> {
+                            UserBetModel.UserBets userBets = new UserBetModel.UserBets();
+                            userBets.setItem(x.getItem());
+                            userBets.setRate(x.getRate() + "");
+                            userBets.setAmount(x.getAmount() + "");
+                            return userBets;
+                        }).collect(Collectors.toList());
+                        userBetModel.setUserBetsList(userBetsList);
+                        userBetModels.add(userBetModel);
+                    });
+                    jsonObject.put("list", JSON.toJSONString(userBetModels));
+                });
             }
             rArray.add(jsonObject);
         });

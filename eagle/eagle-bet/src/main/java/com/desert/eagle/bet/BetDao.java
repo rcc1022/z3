@@ -13,7 +13,7 @@ interface BetDao {
     long sumAmount(int status, int robot, Map<String, String> map);
 
     PageList<BetModel> query(String game, String issue, int status);
-    PageList<BetModel> queryOrderDesc(String game, String issue, int status);
+    SqlTable queryUserBetList(String game, String issue);
 
     PageList<BetModel> query(String issue, int status, int robot);
 

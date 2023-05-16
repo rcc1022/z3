@@ -85,9 +85,11 @@ class BetDaoImpl implements BetDao {
     public PageList<BetModel> query(String game, String issue, int status) {
         return liteOrm.query(new LiteQuery(BetModel.class).where("c_game=? and c_issue=? and c_status=?"), new Object[]{game, issue, status});
     }
+
     @Override
-    public PageList<BetModel> queryOrderDesc(String game, String issue, int status) {
-        return liteOrm.query(new LiteQuery(BetModel.class).where("c_robot=0 and c_game=? and c_issue=? and c_status=?").order("c_time desc"), new Object[]{game, issue, status});
+    public SqlTable queryUserBetList(String game, String issue) {
+        return sql.query("select c_type,c_item,c_rate,sum(c_amount) c_amount from t_bet where c_robot=0 and c_game=? and c_issue=? group by c_type,c_item",
+                new Object[]{game, issue});
     }
 
     @Override
