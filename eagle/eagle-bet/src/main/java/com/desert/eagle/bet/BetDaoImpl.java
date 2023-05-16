@@ -87,9 +87,9 @@ class BetDaoImpl implements BetDao {
     }
 
     @Override
-    public SqlTable queryUserBetList(String game, String issue) {
-        return sql.query("select c_type,c_item,c_rate,sum(c_amount) c_amount from t_bet where c_robot=0 and c_game=? and c_issue=? group by c_type,c_item",
-                new Object[]{game, issue});
+    public List<BetModel> queryUserBetList(String game, String issue) {
+        return liteOrm.query("select c_type,c_item,c_rate,sum(c_amount) c_amount from t_bet where c_robot=0 and c_game=? and c_issue=? group by c_type,c_item",
+                new Object[]{game, issue}).getList();
     }
 
     @Override

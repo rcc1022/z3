@@ -6,6 +6,7 @@ import org.lpw.photon.dao.orm.PageList;
 import java.sql.Timestamp;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
 
 interface BetDao {
     PageList<BetModel> query(String game, String player, String issue, int win, String time, int pageSize, int pageNum);
@@ -13,7 +14,7 @@ interface BetDao {
     long sumAmount(int status, int robot, Map<String, String> map);
 
     PageList<BetModel> query(String game, String issue, int status);
-    SqlTable queryUserBetList(String game, String issue);
+    List<BetModel> queryUserBetList(String game, String issue);
 
     PageList<BetModel> query(String issue, int status, int robot);
 
