@@ -100,7 +100,7 @@ class BetDaoImpl implements BetDao {
             where.append(" and c_issue=?");
             args.add(issue);
         }
-        return liteOrm.query(new LiteQuery(BetModel.class).select(" c_type,c_item,c_rate,sum(c_amount) c_amount ")
+        return liteOrm.query(new LiteQuery(BetModel.class).select(" ANY_VALUE(c_type) c_type,ANY_VALUE(c_item) c_item,ANY_VALUE(c_rate) c_rate,sum(c_amount) c_amount ")
                 .where(where.toString()).group(" c_type,c_item"), args.toArray());
     }
 
