@@ -9,18 +9,36 @@ export default function Immediately(props) {
   const [open, setOpen] = useState("");
   const [data, setData] = useState([]);
   const [list, setList] = useState([]);
+  let time;
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes}分${remainingSeconds}秒`;
+  }
+
+  function countdown(seconds) {
+    clearInterval(time)
+    time = setInterval(() => {
+      seconds--;
+      console.log("定时器");
+      setOpen(formatTime(seconds));
+      if (seconds === 0) {
+        clearInterval(time);
+      }
+    }, 3000);
+  }
 
   const getList = () => {
-    service(props.uri).then((data) => {
-      setData(data);
-      console.log('请求数据');
-    //   handleTab(data[active], active);
+    service(props.uri).then((res) => {
+      setData(res);
+      handleTab(res[0], active);
     });
   };
 
   const handleTab = (item, i) => {
+    setOpen(formatTime(item.open))
     setIsUse(item.issue);
-    setOpen(item.open);
     setActive(i);
     setList(JSON.parse(item.list));
   };
@@ -30,10 +48,10 @@ export default function Immediately(props) {
 
     const intervalId = setInterval(() => {
       getList();
-    }, 8000);
+    }, 3000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [active]);
 
   return (
     <div>
