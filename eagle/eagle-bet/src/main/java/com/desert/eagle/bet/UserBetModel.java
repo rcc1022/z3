@@ -15,6 +15,22 @@ public class UserBetModel implements Serializable {
     private String ratio = "赔率";
     private String val = "注额";
 
+    public String getRatio() {
+        return ratio;
+    }
+
+    public void setRatio(String ratio) {
+        this.ratio = ratio;
+    }
+
+    public String getVal() {
+        return val;
+    }
+
+    public void setVal(String val) {
+        this.val = val;
+    }
+
     public String getType() {
         return type;
     }
