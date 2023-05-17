@@ -91,7 +91,7 @@ class BetDaoImpl implements BetDao {
         StringBuilder where = new StringBuilder();
         List<Object> args = new ArrayList<>();
         where.append("c_robot=?");
-        args.add(0);
+        args.add(1);
         if (game != null) {
             where.append(" and c_game=?");
             args.add(game);
