@@ -7,6 +7,7 @@ import Form from "./form";
 import Setting from "./setting";
 import Crosier from "./crosier";
 import Olcs from "./olcs";
+import Immediately from "./Immediately";
 import Page from "../page";
 
 class Body {
@@ -52,11 +53,22 @@ class Body {
 
     meta.get(uri).then((mt) => {
       if (mt === null) return;
-      console.log(uri.substring(uri.lastIndexOf("/") + 1));
-      console.log(mt);
+      const u = uri.substring(uri.lastIndexOf("/") + 1);
       let m = mt[uri.substring(uri.lastIndexOf("/") + 1)];
       if (!m) return;
-      if (m.type === "grid") {
+      if (u === "immediately") {
+        this.setState(
+          <Immediately
+            props={mt.props}
+            meta={m}
+            uri={uri}
+            parameter={parameter}
+            data={data}
+            body={this}
+            grid={grid}
+          />
+        );
+      } else if (m.type === "grid") {
         this.setState(
           <Grid
             props={mt.props}

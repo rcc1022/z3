@@ -1,4 +1,6 @@
-const root = 'http://mobile';
+// const root = 'http://mobile';
+const root = 'http://43.154.106.190:8080';
+
 
 var illegalUrl = '';
 

@@ -162,6 +162,42 @@ export default {
     this.timeout = false;
   },
   methods: {
+    color(number) {
+      switch (number) {
+        case 1:
+          return "rgb(255, 255, 0)";
+
+        case 2:
+          return "rgb(0, 137, 255)";
+
+        case 3:
+          return "rgb(77, 77, 77)";
+
+        case 4:
+          return "rgb(255, 115, 0)";
+
+        case 5:
+          return "rgb(129, 255, 255)";
+
+        case 6:
+          return "rgb(82, 0, 255)";
+
+        case 7:
+          return "rgb(186, 185, 185)";
+
+        case 8:
+          return "rgb(255, 0, 0)";
+
+        case 9:
+          return "rgb(118, 0, 0)";
+
+        case 10:
+          return "rgb(40, 195, 0)";
+
+        default:
+          break;
+      }
+    },
     timer() {
       if (!this.timeout) return;
 
@@ -529,20 +565,22 @@ export default {
       第<span>{{ issue }}</span
       >期
     </div>
-    <div class="num" style="background-color: rgb(255, 255, 0)">{{ num1 }}</div>
-    <div class="num" style="background-color: rgb(0, 137, 255)">{{ num2 }}</div>
-    <div class="num" style="background-color: rgb(77, 77, 77)">{{ num3 }}</div>
-    <div class="num" style="background-color: rgb(255, 115, 0)">{{ num4 }}</div>
-    <div class="num" style="background-color: rgb(129, 255, 255)">
+    <div class="num" :style="{ background: this.color(num1) }">{{ num1 }}</div>
+    <div class="num" :style="{ background: this.color(num2) }">{{ num2 }}</div>
+    <div class="num" :style="{ background: this.color(num3) }">{{ num3 }}</div>
+    <div class="num" :style="{ background: this.color(num4) }">{{ num4 }}</div>
+    <div class="num" :style="{ background: this.color(num5) }">
       {{ num5 }}
     </div>
-    <div class="num" style="background-color: rgb(82, 0, 255)">{{ num6 }}</div>
-    <div class="num" style="background-color: rgb(186, 185, 185)">
+    <div class="num" :style="{ background: this.color(num6) }">{{ num6 }}</div>
+    <div class="num" :style="{ background: this.color(num7) }">
       {{ num7 }}
     </div>
-    <div class="num" style="background-color: rgb(255, 0, 0)">{{ num8 }}</div>
-    <div class="num" style="background-color: rgb(118, 0, 0)">{{ num9 }}</div>
-    <div class="num" style="background-color: rgb(40, 195, 0)">{{ num10 }}</div>
+    <div class="num" :style="{ background: this.color(num8) }">{{ num8 }}</div>
+    <div class="num" :style="{ background: this.color(num9) }">{{ num9 }}</div>
+    <div class="num" :style="{ background: this.color(num10) }">
+      {{ num10 }}
+    </div>
   </div>
   <canvas
     ref="canvas"
@@ -724,34 +762,84 @@ export default {
             <tr v-for="pcnum in history.list">
               <td>{{ pcnum.issue % 1000 }}</td>
               <td>
-                <div style="background-color: rgb(255, 255, 0)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num1),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num1 }}
                 </div>
-                <div style="background-color: rgb(0, 137, 255)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num2),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num2 }}
                 </div>
-                <div style="background-color: rgb(77, 77, 77)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num3),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num3 }}
                 </div>
-                <div style="background-color: rgb(255, 115, 0)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num4),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num4 }}
                 </div>
-                <div style="background-color: rgb(129, 255, 255)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num5),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num5 }}
                 </div>
-                <div style="background-color: rgb(82, 0, 255)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num6),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num6 }}
                 </div>
-                <div style="background-color: rgb(186, 185, 185)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num7),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num7 }}
                 </div>
-                <div style="background-color: rgb(255, 0, 0)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num8),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num8 }}
                 </div>
-                <div style="background-color: rgb(118, 0, 0)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num9),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num9 }}
                 </div>
-                <div style="background-color: rgb(40, 195, 0)">
+                <div
+                  :style="{
+                    background: this.color(pcnum.num10),
+                    textShadow: ' 1px 1px black',
+                  }"
+                >
                   {{ pcnum.num10 }}
                 </div>
               </td>
@@ -904,6 +992,7 @@ export default {
 
 #latest .num {
   background-color: #509dde;
+  text-shadow: 1px 1px black;
 }
 
 #latest .sum {

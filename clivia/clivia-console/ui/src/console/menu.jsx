@@ -18,11 +18,24 @@ class LeftMenu extends React.Component {
       if (data === null || data.length === 0) return;
 
       let item = data[0].service || data[0].page;
-      
+
       this.setState(
         {
           items: [
             ...data,
+            // {
+            //   label: "在线客服",
+            //   items: [
+            //     {
+            //       service: "/olcs/faq/query",
+            //       label: "常见问题",
+            //     },
+            //     {
+            //       service: "/olcs/query",
+            //       label: "人工回复",
+            //     },
+            //   ],
+            // },
           ],
           item: item,
         },
@@ -32,6 +45,10 @@ class LeftMenu extends React.Component {
   }
 
   click = (e) => {
+    const path = this.map[e.key];
+    if (path.service === "/olcs/query") {
+      window.open("http://localhost:3000/olcs/query")
+    }
     this.load(this.map[e.key]);
   };
 
