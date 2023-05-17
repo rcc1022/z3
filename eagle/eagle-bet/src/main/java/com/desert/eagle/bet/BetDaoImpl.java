@@ -88,10 +88,20 @@ class BetDaoImpl implements BetDao {
 
     @Override
     public PageList<BetModel> queryUserBetList(String game, String issue) {
+        StringBuilder where = new StringBuilder();
+        List<Object> args = new ArrayList<>();
+        where.append("c_robot=?");
+        args.add("0");
+        if (start != null) {
+            where.append(" and c_game=?");
+            args.add(game);
+        }
+        if (end != null) {
+            where.append(" and c_issue=?");
+            args.add(issue);
+        }
         return liteOrm.query(new LiteQuery(BetModel.class).select("select c_type,c_item,c_rate,sum(c_amount) c_amount ")
-                        .where("c_robot=0 and c_game=? and c_issue=?")
-                        .group("c_type,c_item"),
-                new Object[]{game, issue});
+                .where(where.toString()).group("c_type,c_item"), args.toArray());
     }
 
     @Override
