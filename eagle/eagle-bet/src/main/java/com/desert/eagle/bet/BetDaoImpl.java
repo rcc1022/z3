@@ -91,7 +91,7 @@ class BetDaoImpl implements BetDao {
         StringBuilder where = new StringBuilder();
         List<Object> args = new ArrayList<>();
         where.append("c_robot=?");
-        args.add("0");
+        args.add(0);
         if (game != null) {
             where.append(" and c_game=?");
             args.add(game);
@@ -100,8 +100,8 @@ class BetDaoImpl implements BetDao {
             where.append(" and c_issue=?");
             args.add(issue);
         }
-        return liteOrm.query(new LiteQuery(BetModel.class).select("select c_type,c_item,c_rate,sum(c_amount) c_amount ")
-                .where(where.toString()).group("c_type,c_item"), args.toArray());
+        return liteOrm.query(new LiteQuery(BetModel.class).select(" c_type,c_item,c_rate,sum(c_amount) c_amount ")
+                .where(where.toString()).group(" c_type,c_item"), args.toArray());
     }
 
     @Override
