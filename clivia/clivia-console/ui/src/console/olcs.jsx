@@ -287,7 +287,10 @@ class Olcs extends React.Component {
               <textarea onKeyUp={this.keyup} onPaste={this.paste}></textarea>
             </div>
             <div className="olcs-send">
-              <Button type="primary" onClick={this.send}>
+              <Button onClick={() => this.setState({...this.state, user: {} })}>
+                关闭
+              </Button>
+              <Button style={{marginLeft: '5px'}} type="primary" onClick={this.send}>
                 发送
               </Button>
             </div>
@@ -447,7 +450,6 @@ class Olcs extends React.Component {
   };
 
   render = () => {
-    console.log(window.location.pathname)
     return (
       <div
         style={{
@@ -466,8 +468,21 @@ class Olcs extends React.Component {
             bottom: "50px",
             right: 0,
             overflowY: "auto",
+            background: "rgb(238,243,231)",
           }}
         >
+          <div
+            style={{
+              width: "100%",
+              background: "rgb(155,169,58)",
+              height: "80px",
+              padding: "10px 0 0 10px",
+              fontSize: "20px",
+              fontWeight: "700",
+            }}
+          >
+            {this.state.user.nick || ""}
+          </div>
           <Collapse.Panel key={"all"} header="会员">
             <Input.Search id="search-nick" onSearch={this.searchNick} />
             <List

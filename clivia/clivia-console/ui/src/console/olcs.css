@@ -27,10 +27,13 @@
 .olcs-avatar-nick {
     padding: 8px;
     border-bottom: 1px solid #d9d9d9;
+    background: rgb(155,169,58);
+    text-align: center;
 }
 
 .olcs-avatar-nick .nick {
     padding-left: 8px;
+    color: #FFF;
 }
 
 .olcs-user-memo {
@@ -118,6 +121,7 @@
 
 .olcs-tools {
     border-top: 1px solid #d9d9d9;
+    background: #FFF;
 }
 
 .olcs-tool {
@@ -133,7 +137,7 @@
 }
 
 .olcs-input {
-    padding: 8px;
+    /* padding: 8px; */
 }
 
 .olcs-input textarea {
@@ -144,7 +148,8 @@
 }
 
 .olcs-send {
-    padding: 0 8px 8px 0;
+    padding: 8px;
+    background: #FFF;
     text-align: right;
 }
 

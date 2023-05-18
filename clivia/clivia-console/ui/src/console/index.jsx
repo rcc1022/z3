@@ -23,7 +23,7 @@ class Console extends React.Component {
     this.shortcut.current.ringtoneInit();
   };
 
-  isOpen = window.location.pathname === "/olcs/query";
+  isOpen = ["/olcs/query"].includes(window.location.pathname);
 
   render = () => {
     return (
