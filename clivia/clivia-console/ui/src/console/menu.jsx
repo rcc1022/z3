@@ -46,7 +46,7 @@ class LeftMenu extends React.Component {
   click = (e) => {
     const path = this.map[e.key];
     if (path.service === "/olcs/query") {
-      window.open("http://localhost:3000/olcs/query")
+      window.open(`${window.location.origin}/olcs/query`)
       return
     }
     this.load(this.map[e.key]);
