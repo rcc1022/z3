@@ -447,6 +447,7 @@ class Olcs extends React.Component {
   };
 
   render = () => {
+    console.log(window.location.pathname)
     return (
       <div
         style={{
@@ -459,9 +460,10 @@ class Olcs extends React.Component {
         <Collapse
           defaultActiveKey={["all"]}
           style={{
-            height: "40vh",
+            height: "50vh",
+            width: "30vh",
             position: "fixed",
-            bottom: 0,
+            bottom: "50px",
             right: 0,
             overflowY: "auto",
           }}
@@ -505,6 +507,25 @@ class Olcs extends React.Component {
           </Collapse.Panel>
         </Collapse>
         {this.message()}
+
+        {/* <div
+          style={{
+            position: "absolute",
+            right: 0,
+            bottom: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: "50px",
+            width: "30vh",
+            zIndex: 999,
+            background: "#FFF",
+          }}
+        >
+          <Badge
+            count={1}
+          ></Badge>
+        </div> */}
       </div>
     );
   };

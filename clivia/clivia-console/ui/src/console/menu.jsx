@@ -14,7 +14,6 @@ class LeftMenu extends React.Component {
     };
     this.map = {};
     service("/console/menu").then((data) => {
-      console.log(data);
       if (data === null || data.length === 0) return;
 
       let item = data[0].service || data[0].page;
@@ -48,6 +47,7 @@ class LeftMenu extends React.Component {
     const path = this.map[e.key];
     if (path.service === "/olcs/query") {
       window.open("http://localhost:3000/olcs/query")
+      return
     }
     this.load(this.map[e.key]);
   };
