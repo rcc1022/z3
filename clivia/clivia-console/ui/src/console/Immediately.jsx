@@ -9,7 +9,6 @@ export default function Immediately(props) {
   const [open, setOpen] = useState("");
   const [data, setData] = useState([]);
   const [list, setList] = useState([]);
-  let time;
 
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
@@ -18,38 +17,37 @@ export default function Immediately(props) {
   }
 
   function countdown(seconds) {
-    clearInterval(time)
-    time = setInterval(() => {
+    const intervalId = setInterval(() => {
       seconds--;
-      console.log("定时器");
       setOpen(formatTime(seconds));
       if (seconds === 0) {
-        clearInterval(time);
+        clearInterval(intervalId);
       }
-    }, 3000);
+    }, 1000);
   }
 
   const getList = () => {
     service(props.uri).then((res) => {
       setData(res);
-      handleTab(res[0], active);
+      handleTab(res[active], active);
     });
   };
 
   const handleTab = (item, i) => {
-    setOpen(formatTime(item.open))
     setIsUse(item.issue);
+    setOpen(formatTime(item.open));
     setActive(i);
     setList(JSON.parse(item.list));
   };
 
   useEffect(() => {
     getList();
+  }, []);
 
+  useEffect(() => {
     const intervalId = setInterval(() => {
       getList();
-    }, 3000);
-
+    }, 1000);
     return () => clearInterval(intervalId);
   }, [active]);
 
