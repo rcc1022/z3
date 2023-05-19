@@ -23,12 +23,13 @@ class Console extends React.Component {
     this.shortcut.current.ringtoneInit();
   };
 
-  isOpen = window.location.pathname.indexOf("query") !== -1;
+  params = new URLSearchParams(window.location.search);
 
   render = () => {
+    const foo = this.params.get("id");
     return (
       <Layout style={{ minHeight: "100vh" }} onClick={this.ringtoneInit}>
-        {this.isOpen ? (
+        {foo ? (
           <Olcs />
         ) : (
           <>
