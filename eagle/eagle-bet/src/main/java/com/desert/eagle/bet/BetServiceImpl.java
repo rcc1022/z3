@@ -176,7 +176,7 @@ public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener
                             UserBetModel.UserBets userBets = new UserBetModel.UserBets();
                             userBets.setItem(x.getItem());
                             userBets.setRate(x.getRate() + "");
-                            userBets.setAmount(x.getAmount() + "");
+                            userBets.setAmount(x.getAmount() / 100 + "");
                             return userBets;
                         }).collect(Collectors.toList());
                         userBetModel.setUserBetsList(userBetsList);
