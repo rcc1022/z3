@@ -157,10 +157,10 @@ public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener
             if (game.getType() >= 10 && game.getType() < 11) {
                 latest = wunumService.latest(game.getId());
             }
-            long issue = latest.getLongValue("issue");
+            long issue = latest.getLongValue("next");
             if (ObjectUtils.isNotEmpty(issue)) {
                 jsonObject.put("issue", issue + "期");
-                long open = latest.getLongValue("open");
+                long open = latest.getLongValue("close");
                 jsonObject.put("open", open);
                 //查询对应游戏下的用户下单记录，倒排
                 List<BetModel> bets = betDao.queryUserBetList(game.getId(), issue + "").getList();
