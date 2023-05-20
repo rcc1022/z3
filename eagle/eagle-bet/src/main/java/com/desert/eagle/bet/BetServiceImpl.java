@@ -41,6 +41,7 @@ import org.lpw.photon.dao.orm.PageList;
 import org.lpw.photon.scheduler.HourJob;
 import org.lpw.photon.util.*;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import javax.inject.Inject;
 import java.sql.Date;
@@ -164,26 +165,25 @@ public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener
                 jsonObject.put("open", open);
                 //查询对应游戏下的用户下单记录，倒排
                 List<BetModel> bets = betDao.queryUserBetList(game.getId(), issue + "").getList();
-                if (bets.size() == 0) {
-                    return;
-                }
-                Map<String, List<BetModel>> userBetMap = bets.stream().collect(Collectors.groupingBy(BetModel::getType));
+                if (!CollectionUtils.isEmpty(bets) && bets.size() != 0) {
+                    Map<String, List<BetModel>> userBetMap = bets.stream().collect(Collectors.groupingBy(BetModel::getType));
 
-                List<UserBetModel> userBetModels = new ArrayList<>();
-                userBetMap.forEach((key, value) -> {
-                    UserBetModel userBetModel = new UserBetModel();
-                    userBetModel.setType(key);
-                    List<UserBetModel.UserBets> userBetsList = value.stream().map(x -> {
-                        UserBetModel.UserBets userBets = new UserBetModel.UserBets();
-                        userBets.setItem(x.getItem());
-                        userBets.setRate(x.getRate() + "");
-                        userBets.setAmount(x.getAmount() + "");
-                        return userBets;
-                    }).collect(Collectors.toList());
-                    userBetModel.setUserBetsList(userBetsList);
-                    userBetModels.add(userBetModel);
-                });
-                jsonObject.put("list", JSON.toJSONString(userBetModels));
+                    List<UserBetModel> userBetModels = new ArrayList<>();
+                    userBetMap.forEach((key, value) -> {
+                        UserBetModel userBetModel = new UserBetModel();
+                        userBetModel.setType(key);
+                        List<UserBetModel.UserBets> userBetsList = value.stream().map(x -> {
+                            UserBetModel.UserBets userBets = new UserBetModel.UserBets();
+                            userBets.setItem(x.getItem());
+                            userBets.setRate(x.getRate() + "");
+                            userBets.setAmount(x.getAmount() + "");
+                            return userBets;
+                        }).collect(Collectors.toList());
+                        userBetModel.setUserBetsList(userBetsList);
+                        userBetModels.add(userBetModel);
+                    });
+                    jsonObject.put("list", JSON.toJSONString(userBetModels));
+                }
             }
             rArray.add(jsonObject);
         });
