@@ -44,6 +44,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import javax.inject.Inject;
+import java.math.BigDecimal;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.*;
@@ -175,7 +176,7 @@ public class BetServiceImpl implements BetService, PcnumrListener, ScnumListener
                         List<UserBetModel.UserBets> userBetsList = value.stream().map(x -> {
                             UserBetModel.UserBets userBets = new UserBetModel.UserBets();
                             userBets.setItem(x.getItem());
-                            userBets.setRate(x.getRate() + "");
+                            userBets.setRate(0 != x.getRate() ? new BigDecimal(x.getRate() + "").divide(new BigDecimal("100")).toPlainString() : "");
                             userBets.setAmount(x.getAmount() / 100 + "");
                             return userBets;
                         }).collect(Collectors.toList());
