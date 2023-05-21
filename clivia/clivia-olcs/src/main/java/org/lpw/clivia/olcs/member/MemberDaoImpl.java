@@ -21,7 +21,7 @@ class MemberDaoImpl implements MemberDao {
 
     @Override
     public PageList<MemberModel> query() {
-        return liteOrm.query(new LiteQuery(MemberModel.class).order("c_time desc"), null);
+        return liteOrm.query(new LiteQuery(MemberModel.class).order("c_replier_unread desc,c_time desc"), null);
     }
 
     @Override
