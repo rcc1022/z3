@@ -11,12 +11,16 @@ import {
   Button,
   Space,
 } from "antd";
+import Draggable from "react-draggable";
 import {
   CloseCircleOutlined,
   SmileOutlined,
   PictureOutlined,
   SendOutlined,
   CodeOutlined,
+  CloseOutlined,
+  DingdingOutlined,
+  RocketOutlined,
 } from "@ant-design/icons";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import EmojiPicker from "emoji-picker-react";
@@ -38,6 +42,8 @@ class Olcs extends React.Component {
       read: "",
       faqs: [],
       searchFaqs: [],
+      active: 0,
+      personList: [],
     };
     this.timeout = true;
     this.timer();
@@ -45,6 +51,26 @@ class Olcs extends React.Component {
 
   componentWillUnmount = () => {
     this.timeout = false;
+  };
+
+  setActive = (item, index) => {
+    this.setState({
+      active: index,
+      user: item,
+      messages: [],
+      time: "",
+    });
+  };
+
+  handleDel = (index) => {
+    const newList = [...this.state.personList];
+    newList.splice(index, 1);
+    this.setState({
+      personList: newList,
+    });
+    if (newList.length === 0) {
+      this.setState({ ...this.state, user: {}, personList: [] });
+    }
   };
 
   timer = () => {
@@ -135,7 +161,20 @@ class Olcs extends React.Component {
   };
 
   chat = (item) => {
-    this.setState({ user: item, messages: [], time: "" });
+    const id = this.state.personList.find((key) => key.id === item.id)?.id;
+    if (id) {
+      const index = this.state.personList.findIndex(
+        (key) => key.id === item.id
+      );
+      this.setActive(item, index);
+      return false;
+    }
+    this.setState({
+      user: item,
+      messages: [],
+      time: "",
+      personList: [...this.state.personList, item],
+    });
   };
 
   avatar = (user) =>
@@ -255,48 +294,109 @@ class Olcs extends React.Component {
     );
 
     return (
-      <Row>
-        <Col span={24}>
-          <div className="olcs-content">
-            <div className="olcs-avatar-nick">
-              {this.avatar(this.state.user)}
-              <span className="nick">{this.state.user.nick || ""}</span>
-            </div>
-            <div className="olcs-messages">{messages}</div>
-            <div className="olcs-tools">
-              <Popover
-                content={<EmojiPicker onEmojiClick={this.emoji} />}
-                trigger="click"
+      <Draggable>
+        <Row
+          style={{
+            height: "50vh",
+            width: "50vw",
+            position: "absolute",
+            left: "0",
+            right: "0",
+            top: "0",
+            bottom: "0",
+            margin: "auto",
+            zIndex: 10,
+          }}
+          onMouseDown={this.handleMouseDown}
+          onMouseMove={this.handleMouseMove}
+          onMouseUp={this.handleMouseUp}
+        >
+          <Col span={4} style={{ background: "rgb(204,202,205)" }}>
+            {this.state.personList?.map((item, index) => (
+              <li
+                style={{
+                  cursor: "pointer",
+                  height: "48px",
+                  padding: "12px 0",
+                  background: this.state.active === index && "rgb(226,226,226)",
+                  listStyle: "none",
+                  textAlign: "center",
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-around",
+                }}
+                onClick={() => this.setActive(item, index)}
               >
-                <span className="olcs-tool">
-                  <SmileOutlined />
-                </span>
-              </Popover>
-              <Popover content={image} trigger="click">
-                <span className="olcs-tool">
-                  <PictureOutlined />
-                </span>
-              </Popover>
-              <Popover content={faq} trigger="click">
-                <span className="olcs-tool">
-                  <CodeOutlined />
-                </span>
-              </Popover>
+                <RocketOutlined style={{ flex: "0 0 40px" }} />
+                <span style={{ flex: 1 }}>{item?.nick}</span>
+                {this.state.active === index && (
+                  <CloseOutlined
+                    style={{
+                      background: "#bdbaba",
+                      padding: "5px",
+                      fontSize: " 12px",
+                      borderRadius: "50%",
+                    }}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      this.handleDel(index);
+                    }}
+                  />
+                )}
+              </li>
+            ))}
+          </Col>
+          <Col span={18}>
+            <div className="olcs-content">
+              <div className="olcs-avatar-nick">
+                {this.avatar(this.state.user)}
+                <span className="nick">{this.state.user.nick || ""}</span>
+              </div>
+              <div className="olcs-messages">{messages}</div>
+              <div className="olcs-tools">
+                <Popover
+                  content={<EmojiPicker onEmojiClick={this.emoji} />}
+                  trigger="click"
+                >
+                  <span className="olcs-tool">
+                    <SmileOutlined />
+                  </span>
+                </Popover>
+                <Popover content={image} trigger="click">
+                  <span className="olcs-tool">
+                    <PictureOutlined />
+                  </span>
+                </Popover>
+                <Popover content={faq} trigger="click">
+                  <span className="olcs-tool">
+                    <CodeOutlined />
+                  </span>
+                </Popover>
+              </div>
+              <div className="olcs-input">
+                <textarea onKeyUp={this.keyup} onPaste={this.paste}></textarea>
+              </div>
+              <div className="olcs-send">
+                <Button
+                  onClick={() =>
+                    this.setState({ ...this.state, user: {}, personList: [] })
+                  }
+                >
+                  关闭
+                </Button>
+                <Button
+                  style={{ marginLeft: "5px" }}
+                  type="primary"
+                  onClick={this.send}
+                >
+                  发送
+                </Button>
+              </div>
             </div>
-            <div className="olcs-input">
-              <textarea onKeyUp={this.keyup} onPaste={this.paste}></textarea>
-            </div>
-            <div className="olcs-send">
-              <Button onClick={() => this.setState({...this.state, user: {} })}>
-                关闭
-              </Button>
-              <Button style={{marginLeft: '5px'}} type="primary" onClick={this.send}>
-                发送
-              </Button>
-            </div>
-          </div>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      </Draggable>
     );
   };
 
@@ -469,6 +569,7 @@ class Olcs extends React.Component {
             right: 0,
             overflowY: "auto",
             background: "rgb(238,243,231)",
+            zIndex: 10,
           }}
         >
           <div
@@ -521,6 +622,20 @@ class Olcs extends React.Component {
             />
           </Collapse.Panel>
         </Collapse>
+        {this.state.personList.length && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              insetInlineEnd: 0,
+              bottom: 0,
+              insetInlineStart: 0,
+              zIndex: 1,
+              height: "100vh",
+              backgroundColor: "rgba(0,0,0,.45)",
+            }}
+          ></div>
+        )}
         {this.message()}
 
         {/* <div
