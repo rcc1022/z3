@@ -53,7 +53,7 @@ public class HomeCtrl {
 
     @Execute(name = "auth", permit = Permit.always)
     public Object auth() {
-//        homeService.auth(request.get("code"));
+        homeService.auth(request.get("code"));
         forward.redirectTo(homeService.auth(request.get("code")));
 
         return null;
