@@ -152,6 +152,7 @@ class Image extends React.Component {
                           <Upload
                             customRequest={this.upload}
                             onPreview={this.preview}
+                            onRemove={this.remove}
                             fileList={[item]}
                             listType="picture-card"
                             className="image-uploader"

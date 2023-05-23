@@ -8,6 +8,7 @@ import {
 } from "@ant-design/icons";
 import { post, url, loader } from "../http";
 import "./sign.css";
+import img from '../assets/客服.png'
 
 class Sign extends React.Component {
   constructor(props) {
@@ -54,7 +55,9 @@ class Sign extends React.Component {
         <div className="console-sign-loading">
           <Spin spinning={this.state.loading} />
         </div>
-        <WhatsAppOutlined
+        <img
+          src={img}
+          style={{cursor: 'pointer'}}
           onClick={() => {
             window.open(window.location.href + "?id=true");
           }}

@@ -619,7 +619,21 @@ class Olcs extends React.Component {
             />
           </Collapse.Panel>
         </Collapse>
-        {this.state.personList.length && (
+        <div
+          style={{
+            position: "absolute",
+            height: "90vh",
+            width: "50vw",
+            border: "1px solid #ccc",
+            borderRadius: " 8px",
+            top: 0,
+            left: 0,
+            bottom: 0,
+            right: 0,
+            margin: "auto",
+          }}
+        ></div>
+        {this.state.personList.length ? (
           <div
             style={{
               position: "fixed",
@@ -632,27 +646,8 @@ class Olcs extends React.Component {
               backgroundColor: "rgba(0,0,0,.45)",
             }}
           ></div>
-        )}
+        ) : null}
         {this.message()}
-
-        {/* <div
-          style={{
-            position: "absolute",
-            right: 0,
-            bottom: 0,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: "50px",
-            width: "30vh",
-            zIndex: 999,
-            background: "#FFF",
-          }}
-        >
-          <Badge
-            count={1}
-          ></Badge>
-        </div> */}
       </div>
     );
   };
