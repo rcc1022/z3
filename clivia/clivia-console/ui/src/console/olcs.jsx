@@ -294,6 +294,7 @@ class Olcs extends React.Component {
     );
 
     return (
+      <Draggable>
         <Row
           style={{
             height: "50vh",
@@ -306,9 +307,6 @@ class Olcs extends React.Component {
             margin: "auto",
             zIndex: 10,
           }}
-          onMouseDown={this.handleMouseDown}
-          onMouseMove={this.handleMouseMove}
-          onMouseUp={this.handleMouseUp}
         >
           <Col span={4} style={{ background: "rgb(204,202,205)" }}>
             {this.state.personList?.map((item, index) => (
@@ -395,6 +393,7 @@ class Olcs extends React.Component {
             </div>
           </Col>
         </Row>
+      </Draggable>
     );
   };
 
