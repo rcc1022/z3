@@ -294,7 +294,6 @@ class Olcs extends React.Component {
     );
 
     return (
-      <Draggable>
         <Row
           style={{
             height: "50vh",
@@ -396,7 +395,6 @@ class Olcs extends React.Component {
             </div>
           </Col>
         </Row>
-      </Draggable>
     );
   };
 
