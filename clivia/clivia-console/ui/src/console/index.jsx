@@ -27,6 +27,10 @@ class Console extends React.Component {
 
   render = () => {
     const foo = this.params.get("id");
+    if (foo) {
+      console.log(123);
+      window.document.title = "百乐庭客服系统";
+    }
     return (
       <Layout style={{ minHeight: "100vh" }} onClick={this.ringtoneInit}>
         {foo ? (

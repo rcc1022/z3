@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 import { post, url, loader } from "../http";
 import "./sign.css";
-import img from '../assets/客服.png'
+import img from "../assets/客服.png";
 
 class Sign extends React.Component {
   constructor(props) {
@@ -57,9 +57,11 @@ class Sign extends React.Component {
         </div>
         <img
           src={img}
-          style={{cursor: 'pointer'}}
+          style={{ cursor: "pointer" }}
           onClick={() => {
-            window.open(window.location.href + "?id=true");
+            // window.open(window.location.href + "?id=true");
+            window.location.href =
+              "http://124.221.75.140:39461/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=1&groupid=1&special=2";
           }}
         />
         <Dropdown overlay={menu}>
