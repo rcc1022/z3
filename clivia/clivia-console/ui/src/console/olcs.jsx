@@ -27,7 +27,8 @@ import EmojiPicker from "emoji-picker-react";
 import { service, upload, url } from "../http";
 import "./olcs.css";
 
-class Olcs extends React.Component {
+// 暂时改名，先使用嵌套网页
+class A extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -651,6 +652,27 @@ class Olcs extends React.Component {
       </div>
     );
   };
+}
+
+class Olcs extends React.Component {
+  render() {
+    return (
+      <div>
+        <iframe
+        style={{
+          width: '100%',
+          height: '100vh'
+        }}
+          src="
+              http://43.154.39.141/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=1&groupid=1&special=2
+      
+      
+      "
+          frameborder="0"
+        ></iframe>
+      </div>
+    );
+  }
 }
 
 export default Olcs;

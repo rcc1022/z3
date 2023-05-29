@@ -60,8 +60,7 @@ class Sign extends React.Component {
           style={{ cursor: "pointer" }}
           onClick={() => {
             // window.open(window.location.href + "?id=true");
-            window.location.href =
-              "http://43.154.39.141/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=1&groupid=1&special=2";
+              window.open(window.location.href + '?id=true')
           }}
         />
         <Dropdown overlay={menu}>

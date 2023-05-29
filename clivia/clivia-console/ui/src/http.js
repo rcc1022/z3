@@ -2,7 +2,7 @@ import {
     message
 } from 'antd';
 
-const root = 'http://43.154.106.190:8080';
+const root = 'http://43.154.93.218:8080';
 // const root = 'http://console';
 
 const service = (uri, body) => post(uri, body).then(json => {

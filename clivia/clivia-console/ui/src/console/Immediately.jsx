@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Table } from "antd";
 
 export default function Immediately(props) {
+  let intervalId;
   const [active, setActive] = useState(0);
   const [isUse, setIsUse] = useState("");
   const [open, setOpen] = useState("");
@@ -16,15 +17,15 @@ export default function Immediately(props) {
     return `${minutes}分${remainingSeconds}秒`;
   }
 
-  function countdown(seconds) {
-    const intervalId = setInterval(() => {
-      seconds--;
-      setOpen(formatTime(seconds));
-      if (seconds === 0) {
-        clearInterval(intervalId);
-      }
-    }, 1000);
-  }
+  // function countdown(seconds) {
+  //   const intervalId = setInterval(() => {
+  //     seconds--;
+  //     setOpen(formatTime(seconds));
+  //     if (seconds === 0) {
+  //       clearInterval(intervalId);
+  //     }
+  //   }, 1000);
+  // }
 
   const getList = () => {
     service(props.uri).then((res) => {
@@ -35,21 +36,19 @@ export default function Immediately(props) {
 
   const handleTab = (item, i) => {
     setIsUse(item.issue);
+    console.log(item);
     setOpen(formatTime(item.open));
     setActive(i);
-    setList(JSON.parse(item.list));
+    console.log(item);
+    setList(JSON.parse(item?.list || "[]"));
   };
 
   useEffect(() => {
-    getList();
-  }, []);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
+    intervalId = setInterval(() => {
       getList();
     }, 1000);
     return () => clearInterval(intervalId);
-  }, [active]);
+  }, [intervalId, active]);
 
   return (
     <div>
