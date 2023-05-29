@@ -169,7 +169,7 @@ export default {
   <iframe
     v-if="online"
     style="width: 100%; height: 100%"
-    src="http://124.221.75.140:39461/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=1&groupid=1&special=2"
+    src="http://43.154.39.141/index/index/home?visiter_id=&visiter_name=&avatar=&business_id=1&groupid=1&special=2"
     frameborder="0"
   ></iframe>
   <!-- <div v-if="online" class="olcs">
